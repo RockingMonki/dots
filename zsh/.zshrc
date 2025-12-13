@@ -103,7 +103,7 @@ alias fige="nvim ~/.zshrc"
 alias reload="source ~/.zshrc"
 alias grep='grep --color=auto'
 alias vim="nvim"
-alias c="clear"
+alias cl="clear"
 
 # Better preview with exa/eza or ls
 zz() {
