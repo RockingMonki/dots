@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/vivek/.zsh/completions:"* ]]; then export FPATH="/home/vivek/.zsh/completions:$FPATH"; fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -138,3 +140,4 @@ export NVM_DIR="$HOME/.nvm"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+. "/home/vivek/.deno/env"
