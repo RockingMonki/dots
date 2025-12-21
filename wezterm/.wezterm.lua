@@ -14,7 +14,7 @@ config.font = wezterm.font({
 	-- italic = true,
 })
 
-config.color_scheme = "catppuccin-macchiato"
+config.color_scheme = "Ocean (dark) (terminal.sexy)"
 
 config.font_size = 14.5
 config.window_padding = {
