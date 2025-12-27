@@ -39,14 +39,10 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 # A. Load Definitions
 zinit light zsh-users/zsh-completions
 zinit snippet OMZL::history.zsh
-zinit snippet OMZ::plugins/git
-zinit snippet OMZ::plugins/gh
 zinit snippet OMZ::plugins/rust
 zinit snippet OMZ::plugins/deno
 zinit snippet OMZ::plugins/eza
 zinit snippet OMZ::plugins/uv
-zinit snippet OMZ::plugins/python
-zinit snippet OMZ::plugins/pip
 zinit snippet OMZ::plugins/bun
 zinit snippet OMZ::plugins/fzf
 
