@@ -1,17 +1,40 @@
-[window]
-width = 800
-height = 600
-mode = "Windowed"
-opacity = 0.95        # Slight transparency for a modern look
-blur = true           # Only works on macOS/some Linux DEs
+theme = "dracula"
 
-[renderer]
-performance = "High"  # Options: High, Balanced, Low
-backend = "Automatic"
+[editor]
+program = "vi"
+args = []
 
 [fonts]
-size = 16
+size = 18
+features = []
+use-drawable-chars = true
+symbol-map = []
+disable-warnings-not-found = false
+additional-dirs = []
+
+[fonts.regular]
 family = "JetBrains Mono"
+style = "Normal"
+width = "Normal"
+weight = 400
+
+[fonts.bold]
+family = "JetBrains Mono"
+style = "Normal"
+width = "Normal"
+weight = 800
+
+[fonts.italic]
+family = "JetBrains Mono"
+style = "Italic"
+width = "Normal"
+weight = 400
+
+[fonts.bold-italic]
+family = "JetBrains Mono"
+style = "Italic"
+width = "Normal"
+weight = 800
 
 [colors]
 # This is a basic "One Dark" style palette
@@ -21,4 +44,5 @@ cursor = '#528bff'
 tabs = '#282c34'
 tabs-active = '#528bff'
 
-
+[cursor]
+shape = 'block'
