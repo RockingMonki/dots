@@ -1,0 +1,24 @@
+[window]
+width = 800
+height = 600
+mode = "Windowed"
+opacity = 0.95        # Slight transparency for a modern look
+blur = true           # Only works on macOS/some Linux DEs
+
+[renderer]
+performance = "High"  # Options: High, Balanced, Low
+backend = "Automatic"
+
+[fonts]
+size = 16
+family = "JetBrains Mono"
+
+[colors]
+# This is a basic "One Dark" style palette
+background = '#282c34'
+foreground = '#abb2bf'
+cursor = '#528bff'
+tabs = '#282c34'
+tabs-active = '#528bff'
+
+
