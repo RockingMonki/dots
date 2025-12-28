@@ -1,0 +1,18 @@
+[editor]
+program = "vi"
+args = []
+
+theme = "dracula"
+
+[cursor]
+shape = 'block'
+
+[fonts]
+size = 18
+
+[fonts.regular]
+family = "JetBrains Mono"
+style = "normal"
+weight = 400
+
+
