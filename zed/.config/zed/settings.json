@@ -1,0 +1,61 @@
+{
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "indent_guides": {
+    "coloring": "indent_aware",
+    "background_coloring": "indent_aware",
+  },
+  "auto_signature_help": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "disable_ai": true,
+  "terminal": {
+    "toolbar": {
+      "breadcrumbs": true,
+    },
+    "copy_on_select": true,
+  },
+  "preview_tabs": {
+    "enable_preview_from_file_finder": true,
+  },
+  "tabs": {
+    "show_diagnostics": "all",
+    "file_icons": true,
+    "git_status": true,
+  },
+  "title_bar": {
+    "show_branch_icon": true,
+  },
+  "close_on_file_delete": true,
+  "colorize_brackets": true,
+  "inlay_hints": {
+    "show_background": true,
+    "enabled": true,
+  },
+  "hard_tabs": false,
+  "toolbar": {
+    "code_actions": true,
+  },
+  "snippet_sort_order": "top",
+  "show_signature_help_after_edits": true,
+  "show_wrap_guides": true,
+  "cursor_shape": "bar",
+  "buffer_font_family": "JetBrains Mono",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Macchiato",
+    "dark": "Catppuccin Macchiato",
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+}

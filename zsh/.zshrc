@@ -1,8 +1,4 @@
-# Add deno completions to search path
 if [[ ":$FPATH:" != *":/home/vivek/.zsh/completions:"* ]]; then export FPATH="/home/vivek/.zsh/completions:$FPATH"; fi
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -42,12 +38,10 @@ zinit snippet OMZL::history.zsh
 zinit snippet OMZ::plugins/git
 zinit snippet OMZ::plugins/gh
 zinit snippet OMZ::plugins/rust
-zinit snippet OMZ::plugins/deno
 zinit snippet OMZ::plugins/eza
 zinit snippet OMZ::plugins/uv
 zinit snippet OMZ::plugins/python
 zinit snippet OMZ::plugins/pip
-zinit snippet OMZ::plugins/bun
 zinit snippet OMZ::plugins/fzf
 
 # B. Initialize Compinit (Must happen before fzf-tab)
@@ -120,14 +114,8 @@ zz() {
 
 #######################################################################################################
 
-
-export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
-export PATH="/home/vivek/.gdvm/bin/current_godot:/home/vivek/.gdvm/bin:$PATH"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+alias gvm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
