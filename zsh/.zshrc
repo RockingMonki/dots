@@ -66,7 +66,6 @@ zinit snippet https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
 # C. Install FZF-Tab (Replaces standard menu)
 zinit light Aloxaf/fzf-tab
 
-# --- FZF CONFIGURATION ---
 # Use fd (if installed) or find for faster searching
 if (( $+commands[fd] )); then
   export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
@@ -116,7 +115,6 @@ zz() {
 #######################################################################################################
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 alias gvm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g

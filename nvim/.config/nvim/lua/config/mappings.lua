@@ -50,4 +50,4 @@ map("v", ">", ">gv")
 
 -- Clear search highlights with <Esc>
 map("n", "<Esc>", "<cmd>noh<CR>")
-
+map("n", "q", "<CMD>q<CR>")

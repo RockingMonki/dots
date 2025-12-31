@@ -38,3 +38,5 @@ opt.backup = false            -- Don't create backup files
 opt.writebackup = false       -- Don't create backup files
 opt.swapfile = false          -- Don't use swapfiles
 opt.wrap = false              -- Disable line wrapping
+
+vim.opt.winborder = "rounded"
