@@ -58,4 +58,18 @@
     "light": "One Light",
     "dark": "One Dark",
   },
+  "languages": {
+    "Python": {
+      "formatter": {
+        "external": {
+          "command": "bash",
+          "arguments": [
+            "-c",
+            "ruff check --exit-zero --fix --unsafe-fixes --stdin-filename {buffer_path} - | ruff format --stdin-filenae {buffer_path}",
+          ],
+        },
+      },
+      "format_on_save": "on",
+    },
+  },
 }

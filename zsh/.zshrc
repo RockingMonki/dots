@@ -100,6 +100,7 @@ alias reload="source ~/.zshrc"
 alias grep='grep --color=auto'
 alias vim="nvim"
 alias cl="clear"
+alias cat="bat"
 
 # Better preview with exa/eza or ls
 zz() {
@@ -119,3 +120,10 @@ zz() {
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 alias gvm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+
+# bun completions
+[ -s "/home/monki/.bun/_bun" ] && source "/home/monki/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
