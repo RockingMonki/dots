@@ -27,10 +27,26 @@ setopt PROMPT_SUBST
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+bindkey '^y' redo 
+bindkey '^z' undo 
 
 # Colors
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
+
+# Editor 
+# Set Neovim as your default editor
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+# Load the edit-command-line function
+autoload -U edit-command-line
+zle -N edit-command-line
+
+# Bind it to Ctrl-e (you can change this to any key)
+bindkey '^e' edit-command-line
+
+#####################################################################################################################
 
 # A. Load Definitions
 zinit light zsh-users/zsh-completions
