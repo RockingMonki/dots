@@ -118,7 +118,7 @@ alias vim="nvim"
 alias cl="clear"
 alias cat="bat"
 alias glow="glow -p"
-alias ltree='exa --tree --level=2 --ignore-glob=".git|.venv|__pycache__|node_modules"'
+alias ltree='eza --tree --level=2 --ignore-glob=".git|.venv|__pycache__|node_modules"'
 
 zz() {
     local dir
