@@ -55,6 +55,9 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 export FZF_COMPLETION_TRIGGER='**'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export SECRET=123
+export GOPATH="$HOME/go"
+export GOROOT="$HOME/.go"
+export PATH="$GOPATH/bin:$PATH"
 
 # aliases 
 alias ser="source ~/.zshrc"
@@ -62,6 +65,7 @@ alias edit="nvim ~/.zshrc"
 alias cl="clear"
 alias lg="lazygit"
 alias ltree="eza --tree --level=2 --ignore-glob=\".git|.venv|node_modules\""
+alias gvm="$GOPATH/bin/g"
 zinit snippet OMZP::eza
 zinit snippet OMZP::uv
 zinit snippet OMZP::git
