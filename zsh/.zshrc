@@ -5,152 +5,88 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [[ ":$FPATH:" != *":/home/vivek/.zsh/completions:"* ]]; then
-  export FPATH="/home/vivek/.zsh/completions:$FPATH"
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
 fi
 
-# ZINIT BOOTSTAP
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)" && \
-    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-source "${ZINIT_HOME}/zinit.zsh"
-
-# LOAD MISE
-eval "$(~/.local/bin/mise activate zsh)"
-
-zinit ice depth=1
-zinit light romkatv/powerlevel10k
-
-# HISTORY
-HISTSIZE=10000
-SAVEHIST=10000
+# History file + size
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=100000
+SAVEHIST=100000
+# Share history across all shells
 setopt SHARE_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt PROMPT_SUBST
+# Append to history immediately (don’t overwrite)
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY   # add timestamps
+# Better history behavior
+setopt HIST_IGNORE_DUPS        # ignore immediate duplicates
+setopt HIST_IGNORE_ALL_DUPS    # remove older duplicate entries
+setopt HIST_EXPIRE_DUPS_FIRST  # expire duplicates first
+setopt HIST_REDUCE_BLANKS      # remove extra blanks
+setopt HIST_VERIFY             # edit before running from history
+# Don't save junk commands
+setopt HIST_IGNORE_SPACE       # leading space = don’t save
+# Safer multi-session handling
+setopt HIST_FCNTL_LOCK
 
-# Keybindings
-bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-bindkey '^y' redo 
-bindkey '^z' undo 
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Colors
-export CLICOLOR=1
-export LSCOLORS=Gxfxcxdxbxegedabagacad
+eval "$(~/.local/bin/mise activate zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
-# Editor 
-export EDITOR='nvim'
-export VISUAL='nvim'
-
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^e' edit-command-line
-
-#####################################################################################################################
-
-# A. Load Definitions
-zinit light zsh-users/zsh-completions
-zinit snippet OMZL::history.zsh
-zinit snippet OMZ::plugins/git
-zinit snippet OMZ::plugins/gh
-zinit snippet OMZ::plugins/rust
-zinit snippet OMZ::plugins/eza
-zinit snippet OMZ::plugins/uv
-zinit snippet OMZ::plugins/python
-zinit snippet OMZ::plugins/pip
-zinit snippet OMZ::plugins/fzf
-
-# B. Initialize Compinit (Must happen before fzf-tab)
-autoload -Uz compinit
-compinit
-
-# =============================================================================
-# 5. FZF & FZF-TAB
-# =============================================================================
-
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
-
-# A. Install FZF Binary
-zinit ice from"gh-r" as"program"
-zinit light junegunn/fzf
-
-# B. Install Keybindings (Ctrl+R, Ctrl+T)
-zinit snippet https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
-zinit snippet https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
-
-# C. Install FZF-Tab (Replaces standard menu)
+# plugins 
+zinit ice depth=1
+zinit ice wait lucid
+zinit light romkatv/powerlevel10k
+zinit light junegunn/fzf 
 zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma-continuum/fast-syntax-highlighting
 
-# Use fd (if installed) or find for faster searching
-if (( $+commands[fd] )); then
-  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# exports 
+export FZF_COMPLETION_TRIGGER='**'
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+export SECRET=123
+
+# aliases 
+alias ser="source ~/.zshrc"
+alias edit="nvim ~/.zshrc"
+alias cl="clear"
+zinit snippet OMZP::eza
+zinit snippet OMZP::uv
+zinit snippet OMZP::git
+zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
+zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
+
+
+# Rustup completions setup
+# --- rustup zsh completions ---
+if command -v rustup >/dev/null; then
+  mkdir -p ~/.zfunc
+  rustup completions zsh > ~/.zfunc/_rustup
+  fpath=(~/.zfunc $fpath)
 fi
 
-# Previews
-zstyle ':fzf-tab:complete:*:*' fzf-preview ''
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-zstyle ':completion:*:git-checkout:*' sort false
+# style 
 zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:*:*' fzf-preview ''
+zstyle ':fzf-tab:*' switch-group ',' '.'
+zstyle ':fzf-tab:*' fzf-preview '[[ -f $realpath ]] && bat --style=numbers --color=always $realpath || eza --tree --color=always $realpath'
+zstyle ':fzf-tab:complete:git-*:*' fzf-preview 'git show --color=always $word'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --color=always $realpath'
+zstyle ':fzf-tab:complete:(kill|pkill|killall):*' fzf-preview 'ps -fp $word'
+zstyle ':fzf-tab:complete:ssh:*' fzf-preview 'getent hosts $word'
 
-# =============================================================================
-# 6. FINAL PLUGINS (Must be last)
-# =============================================================================
-zinit light zsh-users/zsh-autosuggestions
-zinit ice as"command" from"gh-r" bpick"atuin-*.tar.gz" mv"atuin*/atuin -> atuin" \
-    atclone"./atuin init zsh > init.zsh; ./atuin gen-completions --shell zsh > _atuin" \
-    atpull"%atclone" src"init.zsh"
-zinit light atuinsh/atuin
-zinit light zdharma-continuum/fast-syntax-highlighting
-# zinit light MichaelAquilina/zsh-you-should-use
-
-# =============================================================================
-# 7. ALIASES
-# =============================================================================
-alias fp="ps aux | fzf | awk '{print \$2}' | xargs kill -9"
-alias fige="nvim ~/.zshrc"
-alias reload="source ~/.zshrc"
-alias grep='grep --color=auto'
-alias vim="nvim"
-alias cl="clear"
-alias cat="bat"
-alias glow="glow -p"
-alias ltree='eza --tree --level=2 --ignore-glob=".git|.venv|__pycache__|node_modules"'
-
-zz() {
-    local dir
-    dir=$(zoxide query -l | fzf \
-        --height 60% \
-        --reverse \
-        --preview 'eza -la --color=always {} 2>/dev/null || ls -la {}' \
-        --preview-window right:60% \
-        --bind 'ctrl-/:toggle-preview') && cd "$dir"
-}
-
-#######################################################################################################
-
-export GOPATH="$HOME/go"
-export GOROOT="$HOME/.go"
-export PATH="$GOPATH/bin:$PATH"
-alias gvm="$GOPATH/bin/g"
-
-# bun completions
-[ -s "/home/monki/.bun/_bun" ] && source "/home/monki/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+autoload -Uz compinit 
+compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source <(COMPLETE=zsh jj)
-
-# fnm
-FNM_PATH="/home/monki/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
