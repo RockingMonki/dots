@@ -60,6 +60,7 @@ export SECRET=123
 alias ser="source ~/.zshrc"
 alias edit="nvim ~/.zshrc"
 alias cl="clear"
+alias lg="lazygit"
 zinit snippet OMZP::eza
 zinit snippet OMZP::uv
 zinit snippet OMZP::git
