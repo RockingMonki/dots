@@ -61,6 +61,7 @@ alias ser="source ~/.zshrc"
 alias edit="nvim ~/.zshrc"
 alias cl="clear"
 alias lg="lazygit"
+alias ltree="eza --tree --level=2 --ignore-glob=\".git|.venv|node_modules\""
 zinit snippet OMZP::eza
 zinit snippet OMZP::uv
 zinit snippet OMZP::git
