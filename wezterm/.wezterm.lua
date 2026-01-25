@@ -14,7 +14,7 @@ config.font = wezterm.font({
 	-- italic = true,
 })
 
-config.color_scheme = "Catppuccin Mocha (Gogh)"
+config.color_scheme = "Oxocarbon Dark (Gogh)"
 
 config.font_size = 14.5
 config.window_padding = {
