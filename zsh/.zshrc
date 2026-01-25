@@ -41,11 +41,10 @@ autoload -Uz _zinit
 
 eval "$(~/.local/bin/mise activate zsh)"
 eval "$(zoxide init zsh --cmd cd)"
-
+zinit light romkatv/powerlevel10k
 # plugins 
 zinit ice depth=1
 zinit ice wait lucid
-zinit light romkatv/powerlevel10k
 zinit light junegunn/fzf 
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
@@ -96,3 +95,10 @@ compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# fnm
+FNM_PATH="/home/monki/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
