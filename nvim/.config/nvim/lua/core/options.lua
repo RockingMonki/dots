@@ -76,3 +76,5 @@ vim.api.nvim_create_autocmd('TermOpen', {
 -- Disable unused providers for faster startup
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
+
+vim.opt.winborder = "rounded"

@@ -1,15 +1,15 @@
 return {
   "neovim/nvim-lspconfig",
   dependecies = {
-  {
-    "folke/lazydev.nvim",
-    ft = "lua", -- only load on lua files
-    opts = {
-      library = {
-        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+    {
+      "folke/lazydev.nvim",
+      ft = "lua", -- only load on lua files
+      opts = {
+        library = {
+          { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+        },
       },
     },
-  },
   },
   config = function()
     local capabilities = {
@@ -24,7 +24,7 @@ return {
     capabilities = require('blink.cmp').get_lsp_capabilities(capabilites)
 
     vim.lsp.config('lua_ls', {
-      capabilities = capabilites,
+      capabilities = capabilities,
     })
 
     vim.lsp.enable({
