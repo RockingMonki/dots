@@ -107,5 +107,3 @@ fi
 
 autoload -Uz compinit 
 compinit
-
-
