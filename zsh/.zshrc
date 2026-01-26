@@ -1,11 +1,7 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
@@ -57,6 +53,12 @@ export SECRET=123
 export GOPATH="$HOME/go"
 export GOROOT="$HOME/.go"
 export PATH="$GOPATH/bin:$PATH"
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^e' edit-command-line
 
 # aliases 
 alias ser="source ~/.zshrc"
@@ -73,7 +75,7 @@ zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bi
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
 
 
-# Rustup completions setup
+#  completions setup
 # --- rustup zsh completions ---
 if command -v rustup >/dev/null; then
   mkdir -p ~/.zfunc
@@ -91,9 +93,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --color=always $realpath
 zstyle ':fzf-tab:complete:(kill|pkill|killall):*' fzf-preview 'ps -fp $word'
 zstyle ':fzf-tab:complete:ssh:*' fzf-preview 'getent hosts $word'
 
-autoload -Uz compinit 
-compinit
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -102,4 +101,11 @@ FNM_PATH="/home/monki/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
+  fnm completions > ~/.zfunc/_fnm
+  fpath=(~/.zfunc $fpath)
 fi
+
+autoload -Uz compinit 
+compinit
+
+
