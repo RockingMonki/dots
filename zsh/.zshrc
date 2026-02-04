@@ -62,6 +62,7 @@ bindkey '^e' edit-command-line
 
 # aliases 
 alias ser="source ~/.zshrc"
+alias just="just --choose"
 alias edit="nvim ~/.zshrc"
 alias cl="clear"
 alias lg="lazygit"
@@ -107,3 +108,10 @@ fi
 
 autoload -Uz compinit 
 compinit
+
+# bun completions
+[ -s "/home/monki/.bun/_bun" ] && source "/home/monki/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+
