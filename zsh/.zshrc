@@ -62,13 +62,13 @@ bindkey '^e' edit-command-line
 
 # aliases 
 alias ser="source ~/.zshrc"
-alias just="just --choose"
 alias edit="nvim ~/.zshrc"
 alias cl="clear"
 alias lg="lazygit"
 alias ltree="eza --tree --level=2 --ignore-glob=\".git|.venv|node_modules\""
 alias gvm="$GOPATH/bin/g"
 alias vim="nvim"
+alias j="just --choose"
 zinit snippet OMZP::eza
 zinit snippet OMZP::uv
 zinit snippet OMZP::git
@@ -109,9 +109,10 @@ fi
 autoload -Uz compinit 
 compinit
 
+
 # bun completions
 [ -s "/home/monki/.bun/_bun" ] && source "/home/monki/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
-
+export PATH="$BUN_INSTALL/bin:$PATH"
