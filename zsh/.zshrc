@@ -69,6 +69,7 @@ alias ltree="eza --tree --level=2 --ignore-glob=\".git|.venv|node_modules\""
 alias gvm="$GOPATH/bin/g"
 alias vim="nvim"
 alias j="just --choose"
+alias cat="bat"
 zinit snippet OMZP::eza
 zinit snippet OMZP::uv
 zinit snippet OMZP::git
@@ -116,3 +117,6 @@ compinit
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+alias ggovm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
