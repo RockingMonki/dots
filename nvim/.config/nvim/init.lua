@@ -1,6 +1,4 @@
 require("core.options")
-require("ui.tabbar").setup()
-require("ui.statusline").setup()
 require("core.mappings")
 require("core.lazy")
 require("core.autocmd")
