@@ -66,13 +66,13 @@ alias edit="nvim ~/.zshrc"
 alias cl="clear"
 alias lg="lazygit"
 alias ltree="eza --tree --level=2 --ignore-glob=\".git|.venv|node_modules\""
-alias gvm="$GOPATH/bin/g"
 alias vim="nvim"
 alias j="just --choose"
 alias cat="bat"
 zinit snippet OMZP::eza
 zinit snippet OMZP::uv
 zinit snippet OMZP::git
+zinit snippet OMZP::gh
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
 
@@ -110,7 +110,6 @@ fi
 autoload -Uz compinit 
 compinit
 
-
 # bun completions
 [ -s "/home/monki/.bun/_bun" ] && source "/home/monki/.bun/_bun"
 
@@ -119,4 +118,4 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
-alias ggovm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+alias gvm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
