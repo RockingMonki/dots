@@ -1,5 +1,5 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", "lua_ls"}
+local servers = { "lua_ls", "rust_analyzer"}
 vim.lsp.enable(servers)
 
