@@ -14,7 +14,7 @@ config.font = wezterm.font({
 	-- italic = true,
 })
 
-config.color_scheme = "OneDark (base16)"
+config.color_scheme = "Everblush (Gogh)"
 
 config.font_size = 14.5
 config.window_padding = {
