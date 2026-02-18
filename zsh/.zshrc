@@ -69,6 +69,7 @@ alias ltree="eza --tree --level=2 --ignore-glob=\".git|.venv|node_modules\""
 alias vim="nvim"
 alias j="just --choose"
 alias cat="bat"
+alias cf="clang-format -i"
 zinit snippet OMZP::eza
 zinit snippet OMZP::uv
 zinit snippet OMZP::git
