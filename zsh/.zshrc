@@ -50,11 +50,6 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 export FZF_COMPLETION_TRIGGER='**'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export SECRET=123
-export GOPATH="$HOME/go"
-export GOROOT="$HOME/.go"
-export PATH="$GOPATH/bin:$PATH"
-export EDITOR="nvim"
-export VISUAL="nvim"
 
 autoload -Uz edit-command-line
 zle -N edit-command-line
@@ -62,12 +57,11 @@ bindkey '^e' edit-command-line
 
 # aliases 
 alias ser="source ~/.zshrc"
-alias edit="nvim ~/.zshrc"
+alias edit="vim ~/.zshrc"
 alias cl="clear"
-alias lg="lazygit"
+#alias lg="lazygit"
 alias ltree="eza --tree --level=2 --ignore-glob=\".git|.venv|node_modules\""
-alias vim="nvim"
-alias j="just --choose"
+#alias j="just --choose"
 alias cat="bat"
 alias cf="clang-format -i"
 zinit snippet OMZP::eza
@@ -118,5 +112,3 @@ compinit
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
-alias gvm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
