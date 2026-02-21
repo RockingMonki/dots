@@ -63,9 +63,8 @@ alias cl="clear"
 alias ltree="eza --tree --level=2 --ignore-glob=\".git|.venv|node_modules\""
 #alias j="just --choose"
 alias cat="bat"
-alias cf="clang-format -i"
 zinit snippet OMZP::eza
-zinit snippet OMZP::uv
+#zinit snippet OMZP::uv
 zinit snippet OMZP::git
 zinit snippet OMZP::gh
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
@@ -104,11 +103,3 @@ fi
 
 autoload -Uz compinit 
 compinit
-
-# bun completions
-[ -s "/home/monki/.bun/_bun" ] && source "/home/monki/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
