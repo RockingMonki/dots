@@ -1,7 +1,51 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# PROMPT
+# -----------------------------
+# Minimal Two-Line Prompt Setup
+# -----------------------------
 
+# Enable prompt substitution
+setopt PROMPT_SUBST
+
+# Load colors
+autoload -U colors && colors
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd add_blank_line
+
+add_blank_line() { print "" }
+
+# Git status function
+git_prompt_info() {
+  if git rev-parse --is-inside-work-tree &>/dev/null; then
+    local branch git_state
+    branch=$(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --exact-match)
+
+    git_state=$(git status --porcelain=2 --branch 2>/dev/null)
+
+    local ahead behind staged changed untracked
+    ahead=$(echo "$git_state" | awk '/branch.ab/ {print $3}' | sed 's/+//')
+    behind=$(echo "$git_state" | awk '/branch.ab/ {print $4}' | sed 's/-//')
+
+    staged=$(echo "$git_state" | grep -c '^1 [MADRC]')
+    changed=$(echo "$git_state" | grep -c '^1 .[MTD]')
+    untracked=$(echo "$git_state" | grep -c '^?')
+
+    local info="%F{cyan}($branch"
+
+    [[ $staged -gt 0 ]] && info+=" %F{green}●$staged"
+    [[ $changed -gt 0 ]] && info+=" %F{yellow}✚$changed"
+    [[ $untracked -gt 0 ]] && info+=" %F{red}…$untracked"
+    [[ $ahead -gt 0 ]] && info+=" %F{blue}↑$ahead"
+    [[ $behind -gt 0 ]] && info+=" %F{magenta}↓$behind"
+
+    info+="%F{cyan})%f"
+    echo "$info"
+  fi
+}
+
+# Two-line prompt
+PROMPT='%F{magenta}%~%f $(git_prompt_info)
+%F{green}$%f '
+########################################################################################################################
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
@@ -37,7 +81,6 @@ autoload -Uz _zinit
 
 eval "$(~/.local/bin/mise activate zsh)"
 eval "$(zoxide init zsh --cmd cd)"
-zinit light romkatv/powerlevel10k
 # plugins 
 zinit ice depth=1
 zinit ice wait lucid
@@ -57,14 +100,12 @@ bindkey '^e' edit-command-line
 
 # aliases 
 alias ser="source ~/.zshrc"
-alias edit="vim ~/.zshrc"
+alias edit="nvim ~/.zshrc"
 alias cl="clear"
-#alias lg="lazygit"
 alias ltree="eza --tree --level=2 --ignore-glob=\".git|.venv|node_modules\""
-#alias j="just --choose"
 alias cat="bat"
+alias vim="nvim"
 zinit snippet OMZP::eza
-#zinit snippet OMZP::uv
 zinit snippet OMZP::git
 zinit snippet OMZP::gh
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
@@ -88,9 +129,6 @@ zstyle ':fzf-tab:complete:git-*:*' fzf-preview 'git show --color=always $word'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --color=always $realpath'
 zstyle ':fzf-tab:complete:(kill|pkill|killall):*' fzf-preview 'ps -fp $word'
 zstyle ':fzf-tab:complete:ssh:*' fzf-preview 'getent hosts $word'
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # fnm
 FNM_PATH="/home/monki/.local/share/fnm"
