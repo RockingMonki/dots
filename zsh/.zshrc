@@ -5,9 +5,37 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{33} %F{34}Installation successful.%f%b" || \
         print -P "%F{160} The clone has failed.%f%b"
 fi
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-# PROMPT
-PROMPT="%F{blue}%~%f %F{cyan}>%f "
+# # PROMPT
+#
+# zinit light romkatv/gitstatus
+#
+# gitstatus_start MY_GIT
+#
+# precmd() {
+#   gitstatus_query
+#   if [[ $VCS_STATUS_RESULT == ok-sync ]]; then
+#     GIT_PROMPT="%F{cyan} $VCS_STATUS_LOCAL_BRANCH%f"
+#   else
+#     GIT_PROMPT=""
+#   fi
+# }
+#
+# precmd() {
+# 	if [[ -z "$NEW_LINE_BEFORE_PROMPT" ]]; then
+# 		NEW_LINE_BEFORE_PROMPT=1
+# 	else 
+# 		echo 
+# 	fi
+# }
+#
+# setopt PROMPT_SUBST
+#
+# PROMPT="%F{blue}%~%f %F{yellow}%f 
+# %F{cyan}>=%f "
 
 # History file + size
 HISTFILE="$HOME/.zsh_history"
@@ -30,13 +58,10 @@ setopt HIST_IGNORE_SPACE       # leading space = don’t save
 # Safer multi-session handling
 setopt HIST_FCNTL_LOCK
 
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
 eval "$(~/.local/bin/mise activate zsh)"
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(atuin init zsh)"
+eval "$(starship init zsh)"
 
 # plugins 
 zinit ice depth=1
@@ -45,10 +70,11 @@ zinit light junegunn/fzf
 zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light MichaelAquilina/zsh-you-should-use
 
 # exports 
 export FZF_COMPLETION_TRIGGER='**'
-export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+# export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export SECRET=123
 
 autoload -Uz edit-command-line
@@ -57,17 +83,19 @@ bindkey '^e' edit-command-line
 
 # aliases 
 alias ser="source ~/.zshrc"
-alias edit="nvim ~/.zshrc"
+alias vim="nvim"
+alias edit="vim ~/.zshrc"
 alias cl="clear"
 alias ltree="eza --tree --level=2 --ignore-glob=\".git|.venv|node_modules\""
 alias cat="bat"
-alias vim="nvim"
 zinit snippet OMZP::eza
+zinit snippet OMZP::uv
 zinit snippet OMZP::git
 zinit snippet OMZP::gh
 zinit snippet OMZP::node
 zinit snippet OMZP::npm
 zinit snippet OMZP::nvm
+zinit snippet OMZP::bun
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
 
@@ -96,3 +124,10 @@ compinit
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bun completions
+[ -s "/home/monki/.bun/_bun" ] && source "/home/monki/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
