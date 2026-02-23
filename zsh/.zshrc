@@ -1,51 +1,3 @@
-# PROMPT
-# -----------------------------
-# Minimal Two-Line Prompt Setup
-# -----------------------------
-
-# Enable prompt substitution
-setopt PROMPT_SUBST
-
-# Load colors
-autoload -U colors && colors
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd add_blank_line
-
-add_blank_line() { print "" }
-
-# Git status function
-git_prompt_info() {
-  if git rev-parse --is-inside-work-tree &>/dev/null; then
-    local branch git_state
-    branch=$(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --exact-match)
-
-    git_state=$(git status --porcelain=2 --branch 2>/dev/null)
-
-    local ahead behind staged changed untracked
-    ahead=$(echo "$git_state" | awk '/branch.ab/ {print $3}' | sed 's/+//')
-    behind=$(echo "$git_state" | awk '/branch.ab/ {print $4}' | sed 's/-//')
-
-    staged=$(echo "$git_state" | grep -c '^1 [MADRC]')
-    changed=$(echo "$git_state" | grep -c '^1 .[MTD]')
-    untracked=$(echo "$git_state" | grep -c '^?')
-
-    local info="%F{cyan}($branch"
-
-    [[ $staged -gt 0 ]] && info+=" %F{green}●$staged"
-    [[ $changed -gt 0 ]] && info+=" %F{yellow}✚$changed"
-    [[ $untracked -gt 0 ]] && info+=" %F{red}…$untracked"
-    [[ $ahead -gt 0 ]] && info+=" %F{blue}↑$ahead"
-    [[ $behind -gt 0 ]] && info+=" %F{magenta}↓$behind"
-
-    info+="%F{cyan})%f"
-    echo "$info"
-  fi
-}
-
-# Two-line prompt
-PROMPT='%F{magenta}%~%f $(git_prompt_info)
-%F{green}$%f '
-########################################################################################################################
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
@@ -53,6 +5,9 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{33} %F{34}Installation successful.%f%b" || \
         print -P "%F{160} The clone has failed.%f%b"
 fi
+
+# PROMPT
+PROMPT="%F{blue}%~%f %F{cyan}>%f "
 
 # History file + size
 HISTFILE="$HOME/.zsh_history"
@@ -81,6 +36,8 @@ autoload -Uz _zinit
 
 eval "$(~/.local/bin/mise activate zsh)"
 eval "$(zoxide init zsh --cmd cd)"
+eval "$(atuin init zsh)"
+
 # plugins 
 zinit ice depth=1
 zinit ice wait lucid
@@ -108,6 +65,9 @@ alias vim="nvim"
 zinit snippet OMZP::eza
 zinit snippet OMZP::git
 zinit snippet OMZP::gh
+zinit snippet OMZP::node
+zinit snippet OMZP::npm
+zinit snippet OMZP::nvm
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
 
@@ -130,14 +90,9 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --tree --color=always $realpath
 zstyle ':fzf-tab:complete:(kill|pkill|killall):*' fzf-preview 'ps -fp $word'
 zstyle ':fzf-tab:complete:ssh:*' fzf-preview 'getent hosts $word'
 
-# fnm
-FNM_PATH="/home/monki/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-  fnm completions > ~/.zfunc/_fnm
-  fpath=(~/.zfunc $fpath)
-fi
-
 autoload -Uz compinit 
 compinit
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
