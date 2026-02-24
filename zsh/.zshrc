@@ -28,21 +28,6 @@ bindkey -v
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(atuin init zsh)"
 
-# Plugins
-
-## snippets
-zcomet snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/eza/eza.plugin.zsh
-zcomet snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
-zcomet snippet https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
-zcomet snippet https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
-
-
-## loads
-zcomet load zsh-users/zsh-autosuggestions
-zcomet load zdharma-continuum/fast-syntax-highlighting
-zcomet load Aloxaf/fzf-tab
-zcomet load jeffreytse/zsh-vi-mode
-
 # completion setup 
 
 autoload -Uz compinit
@@ -68,3 +53,18 @@ zstyle ':completion:*' fzf-preview '
 zstyle ':completion:*' menu no
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Plugins
+
+## snippets
+zcomet snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/eza/eza.plugin.zsh
+zcomet snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
+zcomet snippet https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
+zcomet snippet https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
+
+
+## loads
+zcomet load zsh-users/zsh-autosuggestions
+zcomet load zdharma-continuum/fast-syntax-highlighting
+zcomet load Aloxaf/fzf-tab
+zcomet load jeffreytse/zsh-vi-mode
