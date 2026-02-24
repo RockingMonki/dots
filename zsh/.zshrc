@@ -62,7 +62,6 @@ zcomet snippet https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.pl
 zcomet snippet https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
 zcomet snippet https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
 
-
 ## loads
 zcomet load zsh-users/zsh-autosuggestions
 zcomet load zdharma-continuum/fast-syntax-highlighting
