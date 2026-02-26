@@ -1,0 +1,45 @@
+ser
+cl
+cl
+ls
+clear
+mise ls
+cl
+ls
+mise ls
+cl
+uvup
+cl
+ls
+mise ls
+clear
+cl
+mise completion zsh  > /usr/local/share/zsh/site-functions/_mise
+lc
+clear
+ls
+ll
+clear
+mise ls
+cl
+mise completion --help
+sudo mise completion zsh > ~/.local/share/zsh/site-function/_mise
+cl
+edit
+clear
+ser
+edit
+ser
+clear
+ls
+clear
+edit
+clear
+ls
+clear
+ls
+clear
+ls
+ll
+clear
+mise implode

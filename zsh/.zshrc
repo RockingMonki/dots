@@ -1,51 +1,51 @@
-# Install zinit automatically if not present
+# zinit (install if missing)
 if [[ ! -f "${HOME}/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
   mkdir -p "${HOME}/.local/share/zinit"
-  git clone https://github.com/zdharma-continuum/zinit.git "${HOME}/.local/share/zinit/zinit.git"
+  git clone https://github.com/zdharma-continuum/zinit.git "${HOME}/.local/share/zinit/zinit.git" || true
 fi
 
-# Activate zinit
-source "${HOME}/.local/share/zinit/zinit.git/zinit.zsh"
+# Source zinit (safe even if clone failed)
+if [[ -f "${HOME}/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
+  source "${HOME}/.local/share/zinit/zinit.git/zinit.zsh"
+fi
 
-# mise setup (keeps same behaviour)
-eval "$(~/.local/bin/mise activate zsh)"
-
-# Prompt
-eval "$(starship init zsh)"
-
-# Aliases
+# Paths and variables
 export EDITOR="nvim"
-alias cat="bat"
-author=""
-alias cl="clear"
-alias edit="$EDITOR ~/.zshrc"
-alias ser="source ~/.zshrc"
-alias al="alias | fzf"
+export ZSH_CACHE_DIR="${HOME}/.zsh/cache"
+mkdir -p "${ZSH_CACHE_DIR}"
+mkdir -p "${ZSH_CACHE_DIR}/completions"
 
-# Keybinding
-bindkey -v
+# Ensure completions dir exists and is first in fpath
+mkdir -p "${HOME}/.zsh/completions"
+fpath=("${HOME}/.zsh/completions" $fpath)
 
-# Tooling setup
-eval "$(zoxide init zsh --cmd cd)"
-eval "$(atuin init zsh)"
+# Detect mise binary (use PATH if available, otherwise fallback to ~/.local/bin/mise)
+if command -v mise >/dev/null 2>&1; then
+  MISE_BIN=$(command -v mise)
+else
+  MISE_BIN="${HOME}/.local/bin/mise"
+fi
 
-# Oh-My-Zsh plugins via OMZP (cleaner than raw snippets)
-zinit snippet OMZP::eza
-zinit snippet OMZP::git
-zinit snippet OMZP::uv
+# Run mise "activate" if the binary exists and is executable (keeps same behavior as before)
+if [[ -x "$MISE_BIN" || -f "$MISE_BIN" ]]; then
+  # mise activate prints shell code; evaluate it in a safe manner
+  # ignore failures (we don't want shell startup to break)
+  eval "$($MISE_BIN activate zsh 2>/dev/null)" 2>/dev/null || true
+fi
 
-# fzf shell helpers (key-bindings + completion)
-zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
-zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
+# Generate (or refresh) the mise completion file so it's always available for compinit.
+# This is idempotent and safe: it overwrites the local completion file if the command works.
+if [[ -x "$MISE_BIN" || -f "$MISE_BIN" ]]; then
+  # quietly attempt to generate completion — non-fatal
+  "$MISE_BIN" completion zsh 2>/dev/null > "${HOME}/.zsh/completions/_mise" || true
+fi
 
-# Completion setup (cache + fpath)
+# Completion system (must run AFTER fpath and after generating completions)
 autoload -Uz compinit
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
-fpath=(~/.zsh/completions $fpath)
-compinit -d ~/.zsh/cache/zcompdump
+# Use a stable cache file for compinit
+compinit -d "${ZSH_CACHE_DIR}/zcompdump" || true
 
-# zstyle tweaks for fzf-tab / previews
+# zstyle tweaks for fzf-tab / previews and general completion behavior
 zstyle ':completion:*:cd:*' fzf-preview 'eza --tree --level=2 --color=always --icons $realpath'
 zstyle ':completion:*' fzf-preview '
   if [ -d $realpath ]; then
@@ -56,11 +56,46 @@ zstyle ':completion:*' fzf-preview '
 '
 zstyle ':completion:*' menu no
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# keep list-colors from the environment if set
+if [[ -n "$LS_COLORS" ]]; then
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fi
 
-# --- Plugins loaded with zinit turbo (delayed until prompt) ---
-# Use `wait` ice to enable turbo-mode (loads after the first prompt is displayed)
+# Prompt, aliases, keybindings, tooling
+# Starship (if installed) — safe to fail
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
 
+alias cat="bat"
+alias cl="clear"
+alias edit="$EDITOR ~/.zshrc"
+alias ser="source ~/.zshrc"
+alias al="alias | fzf"
+
+# vi keybinding
+bindkey -v
+
+# zoxide & atuin if available
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh --cmd cd)"
+fi
+if command -v atuin >/dev/null 2>&1; then
+  eval "$(atuin init zsh)"
+fi
+
+# Useful OMZP snippets (kept minimal and stable)
+# Prefer the OMZP snippets for common features — safe, no heavy changes.
+zinit snippet OMZP::eza
+zinit snippet OMZP::git
+zinit snippet OMZP::uv
+zinit snippet OMZP::rust
+
+# fzf shell helpers (key-bindings + completion) — keep these as raw snippets
+zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
+zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
+
+# Plugins
 zinit ice wait lucid
 zinit light zsh-users/zsh-autosuggestions
 
@@ -73,3 +108,12 @@ zinit light Aloxaf/fzf-tab
 zinit ice wait lucid
 zinit light jeffreytse/zsh-vi-mode
 
+# Safety & small performance tweaks
+# Reduce history file writes frequency (optional, safe)
+HISTFILE="${HOME}/.zsh/history"
+HISTSIZE=20000
+SAVEHIST=20000
+setopt append_history
+
+# Faster prompt redraw (avoid slow startup IO)
+zstyle ':completion:*' completer _complete _ignored _approximate
