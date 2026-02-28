@@ -43,3 +43,110 @@ ls
 ll
 clear
 mise implode
+ls
+clear
+ls
+ll
+clear
+curl https://mise.run | sh
+ser
+clear
+mise
+clear
+cl
+mise use -g usage
+cl
+edit
+clear
+mise use -g neovim@nightly
+cl
+mise use -g eza
+ls
+cl
+mise ls
+mise use -g atuin zoxide starship ripgrep fzf glow bat 
+cl
+ser
+clear
+ls
+clear
+clear
+mise ls
+cl
+ls
+clear
+edit
+clear
+cd dots
+gsb
+ga .
+gc -m "great changes"
+gp
+gsb
+cl
+cd
+clear
+mise ls
+clear
+ls
+ls
+clear
+ls
+clear
+ls
+sudo apt update
+cl
+ls
+cl
+uvup
+cl
+mise self-update
+cl
+mise plugins list-all | fzf
+mise search erlang
+mise ls-remote erlang
+mise install erlang@28.3.3
+cl
+mise ls
+cl
+mise search elixir
+mise ls-remote elixir
+mise install erlang@1.95.5
+mise install erlang@1.19.5
+rm -rf .cache/mise
+cl
+mise ls
+cl
+mise ls-remote
+cl
+mise search elixir
+mise search erlang
+mise ls-remote erlang
+mise install elixir@1.19.5
+mise ls
+rm -rf .cache/mise
+cl
+mise install erlang@26
+cl
+sudo apt-get install erlang
+git --version
+clear
+git --version
+cl
+docker volume create alpine_data
+cl
+docker run -it \\
+  --name alpine_vm \\
+  -v alpine_data:/root \\
+  alpine:latest \\
+  /bin/sh
+clear
+docker run start -ai apline_vm
+cl
+docker start -ai alpine_vm
+cl
+ls
+cl
+ls
+ldot
+cl
