@@ -117,5 +117,3 @@ setopt append_history
 
 # Faster prompt redraw (avoid slow startup IO)
 zstyle ':completion:*' completer _complete _ignored _approximate
-
-source /home/monki/.config/broot/launcher/bash/br
