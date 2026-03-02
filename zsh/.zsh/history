@@ -150,3 +150,580 @@ cl
 ls
 ldot
 cl
+ls
+clear
+docker start -ai alpine_vm
+docker ps
+clear
+docker volume ls
+docker volume rm alpine_data
+docker rm alpine_vm
+docker volume rm alpine_data
+clear
+ls
+sudo apt update
+cl
+mise install erlang@26
+cl
+ls
+clear
+sudo su
+ls
+clear
+mise install elixir
+cl
+mise ls
+cl
+cd dots
+ls
+gsb
+ga zsh
+gc -m "great changes"
+gp
+cl
+cd
+clear
+sudo apt update\
+\
+sudo apt install -y build-essential autoconf m4 libncurses5-dev \\
+libwxgtk3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev \\
+libpng-dev libssh-dev unixodbc-dev xsltproc fop \\
+libxml2-utils
+sudo apt install build-essential autoconf m4 libncurses5-dev libwxgtk3.2-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-17-jdk
+cl
+ping google.com
+ls
+ll
+clear
+ll
+cl
+uvup
+cl
+mise ls
+mise use just
+ls
+clear
+mise install just
+ls
+cl
+ls
+ll
+clear
+ls
+ll
+clear
+ls
+ll
+cl
+cd dots
+ls
+clear
+ls
+ll
+clear
+clear
+ls
+ll
+rm erl_crash.dump
+cl
+ls
+ll
+clear
+mise install just
+mise use -g just
+cl
+ls
+l
+clear
+ll
+clear
+ls
+clear
+sudo apt install kitty
+clear
+ls
+pwd
+cl
+apt list --installed
+cl
+sudo apt update
+cl
+mise self-update
+mise up --interactive
+mise upgrade --bump
+cl
+ls
+ll
+clear
+ls
+rg install
+cl
+ls
+./configure
+apt search wxWidgets
+ls | fzf
+nvim Makefile
+cl
+./configure
+cl
+ls
+ls
+cl
+rg Makefile install
+cl
+rg install Makefile
+sudo apt update\
+sudo apt install -y build-essential automake autoconf m4 git curl \\
+  libncurses5-dev libncursesw5-dev libssl-dev pkg-config \\
+  libwxgtk3.0-gtk3-dev libwxgtk-webview3.0-gtk3-dev \\
+  libgl1-mesa-dev libglu1-mesa-dev libpng-dev libjpeg-dev \\
+  libssh-dev unixodbc-dev libgmp-dev libffi-dev xsltproc fop \\
+  default-jdk unzip bison flex
+lsb_release -a
+sudo apt update\
+\
+sudo apt install -y \\
+  build-essential autoconf automake m4 \\
+  libncurses-dev \\
+  libssl-dev \\
+  libwxgtk3.2-dev \\
+  libwxgtk-webview3.2-dev \\
+  libgl1-mesa-dev libglu1-mesa-dev \\
+  libpng-dev libjpeg-dev \\
+  libssh-dev unixodbc-dev \\
+  libgmp-dev libffi-dev \\
+  default-jdk \\
+  xsltproc fop \\
+  unzip bison flex
+wx-config --version
+openssl version
+cl
+./configure \\
+  --enable-hipe \\
+  --enable-jit \\
+  --enable-smp-support \\
+  --enable-threads \\
+  --enable-kernel-poll \\
+  --enable-wx \\
+  --with-ssl=/usr \\
+  --with-odbc=/usr
+cl
+nproc
+make -j4
+cl
+ls
+clear
+clear
+ls
+mix
+cl
+ls
+cl
+elixir lib/hello.ex
+iex lib/hello.ex
+cl
+cd
+clear
+ls
+ll
+clear
+curl -fsSO https://elixir-lang.org/install.sh\
+sh install.sh elixir@1.19.5 otp@28.1\
+installs_dir=$HOME/.elixir-install/installs\
+export PATH=$installs_dir/otp/28.1/bin:$PATH\
+export PATH=$installs_dir/elixir/1.19.5-otp-28/bin:$PATH\
+iex
+cl
+ls
+ll
+clear
+rm install.sh
+cl
+ls
+ll
+clear
+ls
+ls
+clear
+cd opt
+cl
+cd erlang
+ls
+cd Downloads
+ls
+cd otp
+cl
+cd otp_src_28.3.3
+cl
+make -j4
+cl
+ls
+ls bin
+bin/erl -version
+bin/erlc -version
+cl
+bin/erl
+cl
+ls
+ls
+cd ..
+cl
+ls
+unzip elixir-otp-28.zip
+cl
+ls
+ls bin
+bat Makefile
+rm -rf bin CHANGELOG.md lib Makefile LICENSE man README.md VERSION
+ls
+cl
+cd otp_src_28.3.3
+sudo make install
+cl
+cd
+ser
+ls
+cl
+which erl
+cl
+cd Downloads
+ls
+rm alpine-virt-3.23.3-x86_64.iso
+rm otp_src_28.3.3.tar.gz
+ls
+cl
+ls
+ls
+ll
+cl
+mise ls
+mise self-update
+cl
+uvup
+cl
+git --version
+cl
+ls
+unzip elixir-otp-28.zip -d elixir
+ls
+clear
+cd elixir
+ls
+bin/elixir --version
+ls
+cl
+sudo make install
+cl
+ls
+xclip -selection clipboard < Makefile
+make clean
+cl
+make -j
+make -j4
+cl
+ls
+cat README.md
+ls
+ls
+clear
+ls
+bin/iex
+cl
+cd ..
+ls
+rm -rf elixir
+rm -rf elixir-otp-28.zip
+cl
+ls
+erl -eval 'erlang:system_info(otp_release), halt().' -s init stop
+cl
+cd
+ls
+clear
+gh repo clone elixir-lang/elixr
+gh repo clone elixir-lang/elixir
+cd elixir
+ls
+git tag
+git checkout v1.19.5
+cl
+ls
+clear
+make clean
+cl
+make 
+cl
+sudo make install
+cl
+cd
+clear
+elixir -version
+cl
+elixir --version
+cl
+ls
+ll
+clear
+mix --help
+man mix
+cd Dev
+mix new hello
+cd hello
+mix test
+cl
+ls
+mix build
+cl
+mix --help
+mix
+cl
+ls
+nvim 
+zed .
+clear
+ls
+cl
+ls
+cl
+cd ..
+rm -rf hello
+ls
+clear
+cd 
+ls
+rm -rf elixir
+cl
+ls
+mise self-update
+cl
+mise list
+cl
+mise list-all
+cl
+mise search git
+cl
+ls
+mise ls
+mise use -g lazygit
+cl
+ls
+make --version
+cl
+curl -sSL https://gdvm.io/install.sh | bash
+cl
+ser
+ls
+clear
+gdvm --help
+gdvm list 
+gdvm search stable
+cl
+gdvm search
+gdvm pin stable
+gdvm use stable
+cl
+rm -rf .gdvm
+clear
+edit
+clear
+ser
+ll
+cl
+mise search conan
+cl
+ls
+mise search conan
+mise use -g conan
+cl
+conan --help
+conan create libmang
+conan create --help
+cl
+ls
+clear
+mise unuse conan
+cl
+mise search bun
+cl
+ls
+ll
+clear
+cd Documents
+ls
+ls
+clear
+ls
+ll
+clear
+uvup
+cl
+ls
+cl
+sudo apt install clang-20
+sudo apt update
+sudo apt install llvm clang++ 
+cl
+sudo apt install clang
+sudo apt autoremove
+cl
+ls
+sudo apt install clang-format
+cl
+apt search clang
+clang --version
+ls
+cl
+sudo apt remove --purge clangd clang-format clang llvm
+cl
+apt search clang
+clear
+apt search clang
+clear
+apt search clang
+cl
+ls
+cl
+mise self-update
+cl
+ls
+clear
+sudo apt autoremove
+cl
+sudo apt install clang-20-doc clang-format-20 clang-tools-20 clang-tidy-20 clangd-20 
+cl
+ls
+ll
+clear
+ls
+clear
+clang --version
+cl
+sudo apt install clang clang-tidy clang-format clangd
+cl
+clang-format -i src/hello.c
+cl
+ls
+ll
+clear
+just meow
+just meow
+cl
+ls
+clear
+bin/meow
+just meow
+bin/meow
+cl
+ls
+clear
+j
+cl
+just --choose
+clear
+ls
+ll
+clear
+clang-tidy src/meow.c
+cl
+clang-format -i src/meow.c
+cl
+cl
+just meow
+cl
+just --help
+just --init
+cl
+just --help
+just --man
+cl
+ls
+ll
+clear
+ls
+cl
+uv self version
+cl
+mise use -g gleam
+ls
+clear
+mise search
+cl
+rustup self update
+ls
+cl
+ls
+cl
+ls
+cl
+perl -version
+cl
+perldoc perl
+cl
+sudo apt install perl-doc
+perldoc perl
+cl
+ls
+ll
+clear
+nvim
+cl
+ls
+ll
+clear
+rustup self update
+cl
+mise ls
+mise search gvm
+cl
+mise install go@1.26.0
+mise use -g go
+cl
+go completion
+cl
+go help
+ls
+mise unuse go
+ls
+cl
+mise ls
+yazi
+cl
+mise use -g yazi
+yazi
+ls
+clear
+ls
+ll
+clear
+mise use -g bunny
+cl
+mise use -g broot
+mise use -g crates.io/broot
+mise use -g aqua:crates.io/broot
+mise install cargo:broot
+cargo binstall broot
+broot
+ser
+cl
+broot
+cl
+ls
+ll
+clear
+cargo uninstall broot
+cl
+ls
+clear
+mise use -g superfile
+ls
+spf --help
+spf
+cl
+spf
+cl
+mise unuse yazi
+cl
+ls
+ll
+clear
+spf
