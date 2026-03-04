@@ -727,3 +727,349 @@ ls
 ll
 clear
 spf
+sudo apt remove --purge clang-20 clang-20-doc clang-format-20 clang-tidy-20 clang-tools-20 clangd-20
+cl
+ls
+ll
+clear
+sudo apt update
+cl
+ls
+cd dots
+ls
+gsb
+ga zsh
+gc -m "great changes"
+gp
+cl
+cd
+clear
+sudo apt update
+sudo apt upgrade
+cl
+ls
+mise self-update
+cl
+mise up --interactive
+cl
+ls
+ldot
+cl
+ls
+cl
+cd ~/.config/nvim
+ls
+clear
+gsb
+cl
+nvim
+cl
+ls
+cd dots
+cl
+gsb
+ga .
+gc -m "great changes"
+gp
+cl
+cd
+cl
+ls
+ll
+clear
+cd Dev
+cl
+ls
+ll
+clear
+cd
+clear
+mise ls
+glow -p Templates/markdown.md
+cl
+ls
+l
+clear
+uvup
+cl
+ls
+ll
+clear
+rustup self update
+cl
+lazygit --version
+cl
+mise ls
+cl
+edit
+edit
+cl
+ls
+clear
+mise ls
+cl
+mise use -g node@lts
+cl
+apt search clang
+cl
+apt list --installed | rg clang
+sudo apt remove --purge clangd clang-format clang llvm
+cl
+ls
+ll
+clear
+sudo apt autoremove
+cl
+sudo apt install clang clangd clang-format llvm 
+clear
+ls
+clear
+sudo su
+cl
+ls
+clear
+sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+ls
+clear
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo >> /home/monki/.zshrc\
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"' >> /home/monki/.zshrc\
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+sudo apt-get install build-essential
+cl
+ls
+cl
+brew install llvm
+cl
+brew install gcc
+cl
+ls
+ll
+clear
+brew doctor
+cl
+brew --help
+brew implode
+cl
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"   
+sudo rm -rf /home/linuxbrew
+cl
+ls
+ll
+clear
+rm -rf ~/.brew
+cl
+cl
+ls
+ll
+clear
+sudo apt update
+cl
+ls
+ll
+clear
+mise ls
+cl
+nvim .wezterm.lua
+ls
+ll
+clear
+ls
+ll
+clear
+uv self version
+cl
+nvim .wezterm.lua
+clear
+ls
+l
+clear
+nvim
+clear
+cargo sync
+cargo b
+cl
+edit
+cl
+ll
+cl
+cd Dev
+lc
+cl
+ls
+gh repo create RockingMonki/pdfrs
+gh repo create RockingMonki/pdfrs --public
+gh repo create RockingMonki/pdfrs --public
+cl
+gh repo clone RockingMonki/pdfrs
+cl
+cd pdfrs
+cargo init .
+ls
+gsb
+cl
+ga .
+gc -m "Intial Project Setup"
+cl
+ls
+clear
+ls
+ll
+clear
+zed .
+clear
+cd 
+ls
+clear
+cd DEv
+clear
+ls
+rm -rf pdfrs
+clear
+gh repo delete RockingMonki/pdfrs
+cl
+cd
+c
+cl
+sudo apt update
+cl
+sudo apt upgrade
+cl
+mise self-update
+cl
+ls
+cl
+uvup
+cl
+ls
+ll
+clear
+ls
+ll
+clear
+ls
+clear
+ls
+lcear
+cl
+ls
+ll
+cl
+sudo apt install clang clangd clang-format llvm clang-tidy
+cl
+ls
+ll
+clear
+cd cs50
+clear
+ls
+cd c
+clear
+zed .
+clear
+ls
+ll
+clear
+cd
+clear
+ls
+ll
+aclear
+cl
+node hello.js
+node greet.js
+cl
+sudo apt update
+cl
+sudo apt upgrade
+cl
+ls
+ll
+clear
+mise self-update
+cl
+mise ls
+spf
+cl
+ls
+ll
+clear
+ls
+clear
+sudo apt install nmap
+nmap
+nmap https://duck.com
+nproc
+cl
+ls
+lcear
+ls
+ll
+clear
+fastfetch
+clear
+neofetch
+cl
+mise ls
+cl
+zoxide --version
+cl
+zoxide --help
+zoxide query 
+cl
+ls
+ll
+clear
+stoolapp
+cl
+ls
+ll
+clear
+ls
+lcear
+cl
+sudo apt install perl
+cl
+ls
+ll
+clear
+which node
+cl
+ls
+ll
+clear
+cd Dev
+clear
+mkdir -p js
+clear
+cd js
+clear
+zed .
+clear
+ls
+clear
+ls
+ll
+clear
+ls
+clear
+mise self-update
+cl
+mise ls
+ls
+clear
+spf
+cl
+ls
+ll
+clear
+ls
+ll
+clear
+uvup
+ls
+clear
+clear
+ls
+ll
+clear

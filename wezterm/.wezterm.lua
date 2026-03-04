@@ -14,8 +14,8 @@ config.font = wezterm.font({
 	-- italic = true,
 })
 
--- config.color_scheme = "Chalk (dark) (terminal.sexy)"
 config.color_scheme = 'Classic Dark (base16)'
+config.window_background_opacity = 0.75
 
 config.font_size = 14.5
 config.window_padding = {
