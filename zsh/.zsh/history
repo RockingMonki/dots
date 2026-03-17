@@ -1073,3 +1073,1103 @@ clear
 ls
 ll
 clear
+nvim .wezterm.lua
+ls
+clear
+ls
+ll
+clear
+ls
+ll
+clear
+ls
+ll
+cl
+cd dots
+ls
+gsb
+ga .
+gc -m "Intial Project Setup"
+cl
+ls
+clear
+gsb
+gp
+cd
+clear
+ls
+ll
+clear
+mise up --interactive
+ls
+clear
+mise install zen
+cl
+mise install zig
+cl
+ls
+clear
+ls
+ll
+clear
+echo see ya
+cl
+just hello
+cl
+sudo apt update
+sudo apt upgrade
+cl
+sudo apt remove --purge qemu-block-extra qemu-system-common qemu-system-data qemu-system-gui qemu-system-modules-opengl qemu-system-modules-spice qemu-system-x86 qemu-utils
+cl
+sudo apt update
+cl
+sudo apt upgrade
+cl
+sudo apt autoremove
+cl
+mise self-update
+cl
+ls
+ll
+clear
+mise up --interactive
+mise up --interactive
+cl
+ls
+l
+clear
+uvup
+cl
+rustup self update
+cl
+ls
+ll
+lcear
+cl
+ls
+ll
+clear
+echo I am a developer
+cl
+ls
+sudo apt update
+sudo apt upgrade
+cl
+ls
+uvup
+mise self-update
+cl
+mise up
+cl
+ls
+ll
+cl
+ls
+ll
+lcear
+cl
+mise install bun@latest
+cl
+ls
+ll
+lcear
+cl
+nvim
+cl
+ls
+ll
+lcear
+cl
+lls
+clear
+ls
+cd Dev
+cd cs50
+cd c
+clear
+ls
+ll
+clear
+cd src
+ls
+nvim queens.c
+gcc queens.c -o queen
+cl
+rm queens.c
+rm queen
+clear
+ls
+ll
+clear
+gcc 
+clear
+sudo apt update
+cl
+ls
+clear
+sudo apt upgrade
+cl
+sudo apt install splint
+cl
+ls
+clear
+l
+clear
+ls
+ll
+clear
+clang-format -i src/conditionals.c
+cl
+ls
+clear
+clang src/conditionals.c -o bin/conditionals
+clang src/conditionals.c -o bin/conditionals -lcs50
+cl
+ls
+clear
+bin/conditionals
+cl
+bin/conditionals
+cl
+ls
+ll
+clear
+oink
+cl
+oin
+clear
+ls
+clear
+ll
+clear
+ls
+ll
+clear
+ls
+clear
+gcc --version
+cl
+pstree
+cl
+tree
+cl
+mise self-update
+cl
+ls
+ll
+clear
+uvup
+ls
+ll
+clear
+mise up --interactive
+cl
+ls
+ll
+clear
+sudo apt update
+sudo apt upgrade
+cl
+sudo apt autoremove
+cl
+sudo apt clean
+ls
+cl
+mise ls
+bat --version
+nvim -V1 -v
+cl
+mise l
+clear
+mise l
+clear
+mise ls
+rg --version
+cl
+mise ls
+cl
+ls
+lcear
+clear
+man node
+cl
+ls
+cl
+mise ls
+ls
+clear
+uvup
+cl
+ls
+clear
+ls
+cl
+ls
+clear
+nproc
+clear
+ra
+lear
+ram
+clear
+ls
+clear
+ls
+ll
+clear
+just --chose
+clear
+just --choose
+cl
+bin/pun
+cl
+clang --help
+tldr clang
+clang -c src/pun.c -o obj.o
+ls
+cat obj.o
+cl
+rm obj.o
+clear
+clang --help | fzf
+clang -E src/pun.c
+cl
+clang --help | fzf
+cl
+ls
+ll
+clear
+ls
+ll
+clear
+clang --help | fzf
+cl
+ls
+ll
+clear
+gcc --help | fzf
+gcc -c src/pun.c
+ls
+bat pun.o
+cl
+rm pun.o
+ls
+clear
+gcc -S src/pun.c
+ls
+bat pun.s
+cl
+ls
+ll
+clear
+l
+clear
+ll
+clear
+lls
+clear
+ls
+rm pun.s
+clear
+ls
+ll
+clear
+ls
+clear
+ls
+ll
+clear
+sudo apt update
+cl
+sudo apt upgrade
+cl
+ls
+ll
+clear
+cd Dev
+ls
+clear
+ls
+cd Book
+clear
+ll
+clear
+cd modern_c
+ll
+clear
+uvup
+ls
+clear
+ll
+clear
+zed .
+ls
+clar
+clear
+cl
+ls
+ll
+clear
+ll
+clear
+just --choose
+gcc src/pun.c
+cl
+ls
+cl
+sudo apt update
+sudo apt upgrade
+cl
+ls
+ll
+clear
+ls
+ll
+clear
+mise self-update
+cl
+mise up --interactive
+cl
+ls
+ll
+clear
+ls
+cl
+ll
+lcear
+cl
+mise self-update
+cl
+ls
+clear
+mise up --interactive
+cl
+sudo apt update
+sudo apt upgrade
+cl
+ls
+ll
+lcear
+cl
+ll
+clear
+ls
+cl
+cd Dev
+cl
+ls
+ll
+lcear
+cl
+rm -rf js
+clear
+ls
+ll
+clear
+cd Book
+ls
+clear
+ls
+ll
+clear
+cd modern_c
+ls
+clear
+ls
+ll
+clear
+ltree
+clear
+ls --tree
+cl
+ls
+ll
+cl
+ls
+clear
+zed .
+just --choose
+just --choose
+clear
+bin/dimension
+clear
+ls
+clear
+ll
+lcear
+exit
+ls
+ll
+clear
+uvup
+cl
+exi
+clear
+exit
+ls
+cl
+tmux
+clear
+ls
+ll
+clear
+mise install zellij
+mise use zellij
+clear
+zellij
+clear
+ll
+clear
+ll
+clear
+ll
+clear
+ll
+clear
+clear
+just --choose
+bin/dweight2
+clear
+ll
+clear
+just --choose
+bin/dweight2
+cl
+just --choose
+bin/dweight2
+cl
+ls
+ll
+clear
+just ktof
+clear
+just ktof
+bin/ktof
+clear
+clear
+ls
+lcear
+clear
+ls
+ll
+clear
+cd exercises
+cd ch_2
+make hello.c
+clear
+ls
+ll
+clear
+gcc hello.c
+ls
+clear
+gcc hello.c -o hello.c
+clear
+gcc hello.c -o hello
+clear
+./hello
+clear
+mise self-update
+mise up
+c
+clear
+sudo apt update
+sudo apt upgrade 
+clear
+ll
+clear
+ll
+clear
+ls
+ll
+clear
+uvup
+cl
+node --version
+clear
+ll
+clear
+cd
+clear
+zig test
+clear
+ls
+ll
+clear
+zig test --help
+zig --help
+zig run
+clear
+zig run src/main.zig
+clear
+ls
+clear
+cl
+clear
+mise install zig
+clear
+mise use zig
+clear
+zig std
+clear
+ls
+ll
+clear
+zig --help
+clear
+zig libc
+cl
+ll
+clear
+zig help
+zig init marx
+clear
+ls
+ll
+clear
+ls
+clear
+cd Dev
+lc
+clear
+ls
+clear
+mkdir -p rack
+cd rack
+cl
+zig init
+clear
+zig build
+clear
+zed .
+cd ..
+clear
+rm -rf rack
+clear
+ls
+clear
+cd ../..
+clear
+ls
+ll
+celar
+cl
+just --choose
+bin/dweight
+cd exercises/ch_2
+clear
+ls
+ll
+clear
+ls
+ll
+clear
+cd ..
+ls
+clear
+gcc unsullied.c
+./a.out
+clear
+./a.out
+gcc unsullied.c
+cl
+ls
+./a.out
+cl
+./a.out
+clear
+cd ch
+clear
+ls
+gcc tick.c -o tick
+clear
+./tick
+clear
+clear
+just volume.c
+clear
+just volume
+clear
+cd ..
+clear
+bin/volume
+just volume
+bin/volume
+clear
+clear
+just volume
+clear
+bin/volume
+just volume
+clear
+bin/volume
+cl
+clear
+just tax
+clear
+bin/tax
+clear
+ll
+clear
+clear
+just tax
+bin/tax
+just tax
+clear
+bin/tax
+clear
+clear
+ls
+clear
+ll
+clear
+just tax
+clear
+bin/tax
+clear
+just poly
+clear
+bin/poly
+clear
+just poly
+clear
+bin/poly
+just poly
+clear
+bin/poly
+clear
+just bill
+clear
+bin/poly
+clear
+bin/bill
+ls
+clear
+bin/bill
+python3
+clear
+ls
+ll
+clear
+which python3
+clear
+python3 --version
+clear
+l
+clear
+ll
+clear
+python3
+clear
+python3
+clear
+ll
+clear
+clear
+ls
+clear
+sudo apt update
+sudo apt upgrade
+clear
+mise self-update
+clear
+mise up
+clear
+ll
+clear
+uvup
+cl
+ls
+ll
+clear
+mise unuse zig
+ls
+mise ls
+mise unuse zellij
+clear
+ll
+lcear
+cl
+mise ls
+mise unuse gleam
+cl
+mise ls
+spf
+cl
+mise ls
+clear
+ll
+clear
+ping google.com
+cl
+ls
+ll
+clear
+uvup
+cl
+ls
+ll
+clear
+gdb -v
+cl
+which gdb
+clear
+ll
+clear
+gcc -v
+gcc --version
+cl
+ll
+cl
+ll
+clear
+uvup
+cl
+clear
+sudo apt update
+sudo apt upgrade
+clear
+nvim main.c
+cl
+ls
+ll
+clear
+ll
+clear
+cl
+ls
+ll
+clear
+sudo apt update
+sudo apt upgrade
+clear
+ll
+clear
+cl
+ll
+mise self-update
+cl
+mise up --interactive
+cl
+ls
+ll
+clear
+uvup
+cl
+ll
+clear
+rustup self update
+cl
+ll
+clear
+rustup self uninstall
+clear
+ll
+clear
+cd Dev
+clear
+ll
+clear
+ls
+rm -rf Book
+rm -rf Course
+clear
+ll
+clear
+ll
+clear
+sudo apt update
+sudo apt upgrade
+clear
+mise self-update
+clear
+mise up --interactive
+cl
+ll
+clear
+ll
+lcear
+cl
+ll
+clear
+ping google.com
+cl
+ll
+clear
+sudo apt install okualr
+sudo apt install okular
+clear
+ll
+clear
+apt search mu
+apt search mupdf
+sudo apt install mupdf
+cd exercises
+cd quote
+clear
+make quote
+clear
+ll
+clear
+./quote
+ls
+clear
+ll
+clear
+uvup
+cl
+cd Dev
+clear
+ll
+clear
+cd cs50
+ls
+clear
+cd c
+clear
+ll
+cd libcs50
+sudo make uninstall
+cl
+ls
+ll
+cd ../..
+clear
+cd ..
+rm -rf cs50
+sudo rm -rf cs50
+clear
+ll
+clear
+ld
+ls
+clear
+mkdir -p Book
+clear
+ll
+clear
+cd Book
+clear
+ll
+celar
+cl
+zed .
+mkdir -p modern_c
+clear
+cd modern_c
+zed .
+clear
+cd
+clear
+ll
+clear
+ll
+clear
+c
+clear
+sudo apt update
+sudo apt upgrade
+clear
+uvup
+cl
+mise self-update
+cl
+mise up --interactive
+cl
+ldot
+cl
+gcc --version
+cl
+cd modern_c
+clear
+ll
+clear
+zed .
+clear
+cd ..
+clear
+cd ..
+rm -rf Book
+clear
+ll
+clear
+ls
+cl
+cd
+cl
+cd
+clear
+ani-cli
+cl
+ll
+clear
+ls
+cl
+sudo apt update
+sudo apt upgrade
+cl
+clear
+ll
+clear
+cl
+ll
+cl
+ls
+clear
+unzip 086_Science.zip
+clear
+unzip 087_Social_Science.zip
+cl
+ls
+clear
+lll
+clear
+ll
+unzip 041_Mathematics_Standard.zip
+cl
+unzip 184_English_Language_and_Literature.zip
+clear
+unzip *.zip 
+cl
+ll
+unzip ENGLISH_L\&L.zip
+ls
+unzip Kannada.zip
+unzip *.zip
+cl
+ll
+rm ENGLISH_L\&L.zip
+rm Kannada.zip
+clear
+unzip MATHEMATICS_STANDARD.zip
+rm 30-S-1\ MATHEMATICS\ STANDARD.pdf
+ls
+rm 30-S-2\ MATHEMATICS\ STANDARD.pdf 30\(B\)\ Mathematics\ Standard.pdf 30-S-3\ MATHEMATICS\ STANDARD.pdf
+cl
+unzip MATHEMATICS_STANDARD.zip
+cl
+rm MATHEMATICS_STANDARD.zip
+CL
+cl
+ls
+unzip SCIENCE.zip
+rm SCIENCE.zip
+cl
+ls
+ll
+clear
+ls
+clear
+unzip *.zi
+clear
+unzip *.zip
+cl
+rm SOCIAL_SCIENCE.zip
+cl
+ls
+cd ..
+lcear
+clear
+cd 2024_Main
+ls
+unzip *.zip
+ll
+unzip ENGLISH_L\&L\ \(1\).zip
+ls
+rm ENGLISH_L\&L\ \(1\).zip
+ls
+unzip Kannada.zip
+rm Kannada.zip
+cl
+unzip SOCIAL_SCIENCE.zip
+unzip SCIENCE.zip
+ls
+rm SOCIAL_SCIENCE.zip
+rm SCIENCE.zip
+unzip Information_Technology.zip
+ls
+rm Information_Technology.zip
+ls
+unzip MATHEMATICS_STANDARD.zip
+cl
+ls
+rm MATHEMATICS_STANDARD.zip
+cl
+ls
+cl
+cd Downloads
+clear
+cd CBSE
+clear
+cl
+ls
+tree .
+cl
+cd 2023_Compartment
+unzip English_Lan_Lit.zip
+unzip Kannada.zip
+unzip Maths_Standard.zip
+unzip Science.zip
+unzip Social_Science.zip
+clear
+ls
+rm *.zip
+cl
+ls
+cl
+ls
+cd ..
+clear
+ll
+clear
+cd 2023_Main
+cl
+unzip 13_Kannada.zip
+unzip 89_Information_Technology.zip
+unzip English_Language_Literature.zip
+unzip MATHEMATICS_STANDARD.zip
+unzip SCIENCE.zip
+unzip SOCIAL_SCIENCE.zip
+unzip *.zip
+cl
+rm *.zip
+cl
+ll
+cd ..
+clear
+ls
+cd 2022_Compartment
+cl
+unzip English_language_and_Literature.zip
+unzip INFORMATION_TECHNOLOGY.zip
+unzip Kannada.zip
+unzip MATHEMATICS_STD.zip
+unzip SCIENCE.zip
+unzip SOCIAL_SCIENCE.zip
+clear
+rm *.zip
+clear
+ll
+clear
+cd ..
+clear
+cd 2022_Main
+clear
+unzip English_\&_Lit.zip
+unzip Information\ Technology.zip
+unzip Kannada.zip
+unzip Math_S.zip
+unzip SST.zip
+unzip Scince.zip
+clear
+ll
+clear
+sudo apt search kde-connect
+sudo apt update && sudo apt install kdeconnect -y
+kdeconnect-cli --list-devices
+sudo ufw allow 1714:1764/tcp\
+sudo ufw allow 1714:1764/udp
+cl
+kdeconnect-cli --list-devices
+cl
+ip addr

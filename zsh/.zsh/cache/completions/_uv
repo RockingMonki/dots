@@ -4601,7 +4601,7 @@ never\:"Disables colored output"))' \
 '(--allow-existing)--no-clear[Fail without prompting if any existing files or directories are present at the target path]' \
 '--allow-existing[Preserve any existing files or directories at the target path]' \
 '--system-site-packages[Give the virtual environment access to the system site packages directory]' \
-'--relocatable[Make the virtual environment relocatable]' \
+'--relocatable[Make the virtual environment relocatable \[env\: UV_VENV_RELOCATABLE=\]]' \
 '--no-relocatable[Don'\''t make the virtual environment relocatable]' \
 '--no-index[Ignore the registry index (e.g., PyPI), instead relying on direct URL dependencies and those provided via \`--find-links\`]' \
 '--refresh[Refresh all cached data]' \
