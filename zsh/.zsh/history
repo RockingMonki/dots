@@ -2173,3 +2173,92 @@ cl
 kdeconnect-cli --list-devices
 cl
 ip addr
+cl
+mise self-update
+cl
+ll
+cl
+sudo apt update
+cl
+ll
+cl
+uv self version
+cl
+ll
+clear
+mise self-update
+cl
+mise self-update
+cl
+sudo apt update
+cl
+sudo apt upgrade
+cl
+sudo apt upgrade
+cl
+ll
+lcear
+cl
+mise up --interactive
+cl
+l
+clear
+uvup
+cl
+ll
+clear
+ll
+ll
+clear
+mise ls
+cl
+sudo apt remove --purge kdeconnect
+sudo apt autoremove
+gh extension install dlvhdr/gh-dash
+gh dash
+cl
+ll
+clear
+gh dash
+cl
+cl
+ll
+cl
+cd dots
+gsb
+ga zsh
+cl
+ll
+clear
+ll
+gc -m "Some change"
+cl
+gp
+lazygit
+cl
+ll
+clear
+git --version
+cl
+cd
+clear
+ll
+ip
+cl
+ll
+cl
+pr
+cl
+ll
+clear
+edit
+cl
+ll
+clear
+gh extension install dlvhr/gh-enhance
+gh extension install dlvhdr/gh-enhance
+cl
+gh enhance
+cl
+gh enhance --help
+cl

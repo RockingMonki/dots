@@ -1,4 +1,4 @@
-#files: 1012	version: 5.9
+#files: 1017	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -161,7 +161,7 @@ _comps=(
 'catchsegv' '_precommand'
 'cc' '_gcc'
 'ccal' '_ccal'
-'cd' '_cd'
+'cd' '__zoxide_z_complete'
 'cdbs-edit-patch' '_cdbs-edit-patch'
 'cdc' '_sccs'
 'cdcd' '_cdcd'
@@ -1873,6 +1873,7 @@ zle -C _correct_filename .complete-word _correct_filename
 zle -C _correct_word .complete-word _correct_word
 zle -C _expand_alias .complete-word _expand_alias
 zle -C _expand_word .complete-word _expand_word
+zle -C _fzf-tab-apply complete-word _fzf-tab-apply
 zle -C _history-complete-newer .complete-word _history_complete_word
 zle -C _history-complete-older .complete-word _history_complete_word
 zle -C _list_expansions .list-choices _expand_word
@@ -1895,8 +1896,9 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _gh _mise _bun _cargo _gh \
-            _mise _rustup _uv _uvx _zinit \
+autoload -Uz _gh _mise _cargo _rustup _uv \
+            _uvx _gh _mise _bun _cargo \
+            _gh _mise _rustup _uv _uvx \
             _bootctl _busctl _bwrap _coredumpctl _curl \
             _docker _dpkg-parsechangelog _flatpak _hostnamectl _journalctl \
             _kernel-install _localectl _loginctl _machinectl _mpv \
