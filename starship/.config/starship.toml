@@ -3,7 +3,7 @@
 
 # Inserts a blank line between shell prompts
 add_newline = false 
-
+palette = "modern_dark"
 # Replace the '❯' symbol in the prompt with '➜'
 [character] # The name of the module we are configuring is 'character'
 success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
@@ -11,3 +11,28 @@ success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
+
+
+[palettes.modern_dark]
+# Base colors
+bg        = "#1e1e2e"
+fg        = "#cdd6f4"
+
+# Accents
+red       = "#f38ba8"
+green     = "#a6e3a1"
+yellow    = "#f9e2af"
+blue      = "#89b4fa"
+purple    = "#cba6f7"
+cyan      = "#94e2d5"
+orange    = "#fab387"
+
+# Muted / subtle
+muted     = "#6c7086"
+surface   = "#313244"
+overlay   = "#45475a"
+
+# Special
+success   = "#a6e3a1"
+warning   = "#f9e2af"
+error     = "#f38ba8"
