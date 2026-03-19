@@ -2511,3 +2511,114 @@ clear
 ll
 clear
 exec /usr/bin/zsh
+clear
+ll
+clear
+clear
+cd dots
+clear
+ll
+mkdir -p starship/.config/starship/
+rm -rf starship
+clear
+cd ~/.config/
+clear
+ll
+clear
+ls
+rm -rf rio
+cl
+ls
+sudo rm -rf go
+rm -rf fish Code Antigravity alacritty kitty zellij neofetch nemo 
+cl
+ll
+clear
+cd 
+cd dots
+clear
+mkdir -p starship/.config/
+touch starship/.config/starship.toml
+clear
+stow starship
+clear
+cd
+clear
+cd ~/.config/s
+clear
+cd ~/.config/
+clear
+nvim starship.toml
+clear
+ll
+clear
+cd
+clear
+ll
+cd dots
+clear
+ll
+gsb
+ga .
+gc -m "feat: improvements"
+cl
+gp
+cl
+cd
+clear
+ll
+cl
+ls
+cl
+mise self-update
+cl
+uvup
+cl
+sudo apt update
+sudo apt upgrade
+clear
+edit
+clear
+nvim ~/.config
+clear
+ls
+clear
+nvim ~/.config/starship.toml
+clear
+ll
+clear
+clear
+ll
+clear
+nvim .wezterm.lua
+clear
+ll
+clear
+mkdir -p ~/.local/share/fonts\
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/IosevkaTerm.zip\
+unzip IosevkaTerm.zip -d ~/.local/share/fonts\
+fc-cache -fv\
+rm IosevkaTerm.zip
+clear
+ll
+clear
+ls
+clear
+ls
+unzip IosevkaTerm.zip
+clear
+rm IosevkaTerm.zip
+clear
+ll
+clear
+nvim .wezterm.lua
+clear
+ll
+clear
+ll
+clear
+nvim .wezterm.lua
+clear
+ll
+clear
+mise self-update
