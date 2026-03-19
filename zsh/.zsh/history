@@ -2262,3 +2262,252 @@ gh enhance
 cl
 gh enhance --help
 cl
+ls
+cl
+nvim
+cl
+cd nvim
+clear
+ll
+lcear
+ll
+clear
+rm -rf lua
+cl
+rm lazy-lock.json
+clear
+nvim init.lua
+cl
+gsb
+ga .
+gc -m "neovim config wrecked"
+gp
+cl
+mise self-update
+cl
+mise up --interactive
+cl
+ll
+sudo apt update
+cl
+ll
+clear
+ll
+ls
+clear
+nvim init.lua
+mkdir -p lua/config
+clear
+nvim
+cl
+gsb
+cl
+nvim
+cl
+nvim
+cl
+nvim
+cl
+nvim
+clear
+nvim
+clear
+ll
+gsb
+cl
+nvim
+clear
+nvim
+clear
+nvim
+cl
+nvim
+clear
+nvim
+clear
+nvim
+clear
+nvim
+clear
+cd 
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/zinit
+rm -rf ~/.local/share/nvim
+rm -rf ~/.local/state/nvim
+clear
+ser
+cl
+ll
+lcear
+cd dots
+clear
+rm -rf nvim
+clear
+ga .
+gc -m "pr"
+gp
+cl
+ll
+lcear
+cl
+ll
+clear
+git clone https://github.com/NvChad/starter nvim
+rm -rf nvim/.git
+cl
+mkdir -p nvim/.config/
+cl
+ll
+mv nvim ~
+ls
+gsb
+mkdir -p nvim/.config/
+mv ~/nvim nvim/.config/nvim
+cl
+cd nvim/.config/nvim
+ls
+rm -rf .config
+cl
+ll
+gsb
+cd ..
+clear
+cd
+clear
+cd dots
+stow nvim
+cd nvim
+cl
+nvim
+cl
+cd
+clear
+cd nvim
+clear
+ll
+nvim
+cl
+cd
+clear
+ll
+clear
+just hello
+bin/hello
+cl
+just greet
+just greet
+cl
+bin/greet
+cl
+ls
+uvup
+cl
+ll
+clear
+ll
+ll
+clear
+ls
+sudo apt update
+sudo apt upgrade
+cl
+ll
+cl
+cd Dev
+clear
+ll
+cl
+ls
+ll
+clear
+mkdir -p cs50
+cl
+ls
+cd cs50
+cl
+ls
+gh repo clone cs50/libcs50
+cd libcs50
+rm -rf .git
+cl
+sudo make install
+cl
+cd ..
+cl
+ls
+mkdir src
+mkdir bin
+cl
+ls
+zed .
+clear
+ls
+cl
+cd
+clear
+ll
+clear
+mise self-update
+cl
+mise up --interactive
+cl
+cl
+ll
+clear
+ls
+mise self-update
+cl
+mise up --interactive
+cl
+uvup
+cl
+ll
+clear
+edit
+cl
+exec /usr/bin/zsh
+clear
+ll
+clear
+ll
+cl
+echo $ZSH_VERSION
+echo -e "\xee\x82\xa0" #> ƒ€\
+
+cl
+echo -e "\xee\x82\xa0"\
+
+cl
+ll
+clear
+cl
+ls
+ll
+edit
+cl
+exec /usr/bin/zsh
+starship --help
+starship init zsh
+cl
+starship --help
+clear
+ll
+cl
+cd Dev
+clear
+ll
+cl
+ll
+clear
+edit
+ser
+clear
+ll
+clear
+ser
+cl
+cd
+clear
+ll
+clear
+exec /usr/bin/zsh

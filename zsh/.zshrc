@@ -61,11 +61,8 @@ if [[ -n "$LS_COLORS" ]]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
-# Prompt, aliases, keybindings, tooling
-# Starship (if installed) — safe to fail
-if command -v starship >/dev/null 2>&1; then
-  eval "$(starship init zsh)"
-fi
+# Prompt 
+eval "$(starship init zsh)"
 
 alias cat="bat"
 alias cl="clear"
