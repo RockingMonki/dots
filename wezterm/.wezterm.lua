@@ -16,6 +16,7 @@ config.font = wezterm.font({
 
 config.color_scheme = 'Classic Dark (base16)'
 config.window_background_opacity = 0.75
+config.macos_window_background_blur = 20
 
 config.font_size = 14.5
 config.window_padding = {
