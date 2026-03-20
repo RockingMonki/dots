@@ -44,6 +44,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 if [[ -n "$LS_COLORS" ]]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
+eval "$(fzf --zsh)"
 
 # Prompt 
 eval "$(starship init zsh)"
@@ -53,6 +54,13 @@ alias cl="clear"
 alias edit="$EDITOR ~/.zshrc"
 alias ser="source ~/.zshrc"
 alias al="alias | fzf"
+alias gcb="git branch | fzf | cut -c 3- | xargs git checkout"
+alias ga="git add"
+alias gaa="git add --all"
+alias gb="git branch"
+alias gsb="git status --short --branch"
+alias gp="git push"
+alias gc="git commit"
 
 # vi keybinding
 bindkey -v
@@ -77,7 +85,6 @@ bindkey " " magic-space
 # Useful OMZP snippets (kept minimal and stable)
 # Prefer the OMZP snippets for common features — safe, no heavy changes.
 zinit snippet OMZP::eza
-zinit snippet OMZP::git
 zinit snippet OMZP::uv
 zinit snippet OMZP::rust
 
@@ -110,3 +117,10 @@ zstyle ':completion:*' completer _complete _ignored _approximate
 chpwd() {
   ls
 }
+
+# bun completions
+[ -s "/home/monki/.bun/_bun" ] && source "/home/monki/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
