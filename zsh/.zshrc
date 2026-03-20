@@ -11,14 +11,6 @@ fi
 
 # Paths and variables
 export EDITOR="nvim"
-export ZSH_CACHE_DIR="${HOME}/.zsh/cache"
-mkdir -p "${ZSH_CACHE_DIR}"
-mkdir -p "${ZSH_CACHE_DIR}/completions"
-
-# Ensure completions dir exists and is first in fpath
-mkdir -p "${HOME}/.zsh/completions"
-fpath=("${HOME}/.zsh/completions" $fpath)
-
 # Detect mise binary (use PATH if available, otherwise fallback to ~/.local/bin/mise)
 if command -v mise >/dev/null 2>&1; then
   MISE_BIN=$(command -v mise)
@@ -33,18 +25,10 @@ if [[ -x "$MISE_BIN" || -f "$MISE_BIN" ]]; then
   eval "$($MISE_BIN activate zsh 2>/dev/null)" 2>/dev/null || true
 fi
 
-# Generate (or refresh) the mise completion file so it's always available for compinit.
-# This is idempotent and safe: it overwrites the local completion file if the command works.
-if [[ -x "$MISE_BIN" || -f "$MISE_BIN" ]]; then
-  # quietly attempt to generate completion — non-fatal
-  "$MISE_BIN" completion zsh 2>/dev/null > "${HOME}/.zsh/completions/_mise" || true
-fi
-
 # Completion system (must run AFTER fpath and after generating completions)
 autoload -Uz compinit
 # Use a stable cache file for compinit
-compinit -d "${ZSH_CACHE_DIR}/zcompdump" || true
-
+compinit -d 
 # zstyle tweaks for fzf-tab / previews and general completion behavior
 zstyle ':completion:*:cd:*' fzf-preview 'eza --tree --level=2 --color=always --icons $realpath'
 zstyle ':completion:*' fzf-preview '
@@ -81,6 +65,15 @@ if command -v atuin >/dev/null 2>&1; then
   eval "$(atuin init zsh)"
 fi
 
+# edit command widget 
+autoload -Uz edit-command-line 
+zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+# Magic space 
+bindkey " " magic-space
+
+
 # Useful OMZP snippets (kept minimal and stable)
 # Prefer the OMZP snippets for common features — safe, no heavy changes.
 zinit snippet OMZP::eza
@@ -107,10 +100,13 @@ zinit light jeffreytse/zsh-vi-mode
 
 # Safety & small performance tweaks
 # Reduce history file writes frequency (optional, safe)
-HISTFILE="${HOME}/.zsh/history"
 HISTSIZE=20000
 SAVEHIST=20000
 setopt append_history
 
 # Faster prompt redraw (avoid slow startup IO)
 zstyle ':completion:*' completer _complete _ignored _approximate
+
+chpwd() {
+  ls
+}
