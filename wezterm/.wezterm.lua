@@ -14,11 +14,11 @@ config.font = wezterm.font({
 	-- italic = true,
 })
 
-config.color_scheme = 'Classic Dark (base16)'
+config.color_scheme = "Classic Dark (base16)"
 config.window_background_opacity = 0.75
 config.macos_window_background_blur = 20
 
-config.font_size = 16.5
+config.font_size = 15.75
 config.window_padding = {
 	left = 0,
 	right = 0,
