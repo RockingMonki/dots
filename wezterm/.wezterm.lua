@@ -6,7 +6,7 @@ config.font = wezterm.font({
 	-- italic = true,
 })
 config.font_size = 15.0
-config.color_scheme = "Batman"
+config.color_scheme = "Classic Dark (base16)"
 config.window_padding = {
 	top = 0,
 	bottom = 0,
