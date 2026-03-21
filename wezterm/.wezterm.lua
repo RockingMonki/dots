@@ -17,5 +17,14 @@ config.window_background_opacity = 0.85
 config.macos_window_background_blur = 20
 -- disable tab bar
 config.enable_tab_bar = false
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+
+config.keys = {
+	{
+		key = "Enter",
+		mods = "ALT",
+		action = wezterm.action.ToggleFullScreen,
+	},
+}
 
 return config
