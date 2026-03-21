@@ -1,30 +1,21 @@
 local wezterm = require("wezterm")
-local config = {}
+local config = wezterm.config_builder()
 
 config.font = wezterm.font({
 	family = "JetBrains Mono",
-	harfbuzz_features = {
-		"calt=1", -- Contextual alternatives
-		"clig=1", -- Contextual ligatures
-		"liga=1", -- Standard ligatures
-		"zero", -- Slashed zero
-		"ss01", -- Stylistic set (varies by font)
-	},
-	weight = "Regular",
 	-- italic = true,
 })
-
-config.color_scheme = "Classic Dark (base16)"
-config.window_background_opacity = 0.75
-config.macos_window_background_blur = 20
-
-config.font_size = 15.75
+config.font_size = 15.0
+config.color_scheme = "Batman"
 config.window_padding = {
-	left = 0,
-	right = 0,
 	top = 0,
 	bottom = 0,
+	left = 0,
+	right = 0,
 }
+config.window_background_opacity = 0.85
+config.macos_window_background_blur = 20
+-- disable tab bar
 config.enable_tab_bar = false
 
 return config
