@@ -120,5 +120,5 @@ bindkey " " magic-space
 # other essential tools 
 eval "$(atuin init zsh)"
 eval "$(starship init zsh)"
-
+eval "$(zellij setup --generate-auto-start zsh)"
 ###################################################################################################
