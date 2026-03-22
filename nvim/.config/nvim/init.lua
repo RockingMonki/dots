@@ -1,2 +1,2 @@
-require("config.options")
-require("config.mappings")
+require("config.options") -- load options
+require("config.mappings") -- load mappings
