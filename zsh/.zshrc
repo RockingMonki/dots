@@ -36,6 +36,11 @@ alias cl="clear"
 alias edit="$EDITOR ~/.zshrc"
 alias ser="source ~/.zshrc"
 
+# cd aliases 
+alias ..="cd .."
+alias ....="cd ../.."
+alias ......="cd ../../.."
+
 # Git aliases 
 alias gcb="git branch | fzf | cut -c 3- | xargs git checkout"
 alias ga="git add"

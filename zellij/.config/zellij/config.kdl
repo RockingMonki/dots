@@ -1,7 +1,7 @@
 on_force_close "quit"
 simplified_ui true
 default_shell "zsh"
-theme "onedark"
+theme "tokyo-night-storm"
 default_lazyout "compact"
 mouse_mode true
 copy_command "xclip -selection clipboard"

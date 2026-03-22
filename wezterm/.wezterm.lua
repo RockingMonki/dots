@@ -13,7 +13,7 @@ config.window_padding = {
 	left = 0,
 	right = 0,
 }
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.65
 config.macos_window_background_blur = 20
 -- disable tab bar
 config.enable_tab_bar = false
@@ -24,6 +24,11 @@ config.keys = {
 		key = "Enter",
 		mods = "ALT",
 		action = wezterm.action.ToggleFullScreen,
+	},
+	{
+		key = "q",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.QuitApplication,
 	},
 }
 
