@@ -19,3 +19,4 @@ opt.cursorline = true       -- Highlight current line
 opt.splitright = true       -- Splits go to the right
 opt.splitbelow = true       -- Splits go below
 opt.shiftwidth = 2
+opt.winborder = "rounded"
