@@ -39,7 +39,7 @@ return {
     vim.diagnostic.config {
       virtual_text = {
         prefix = "●", -- Small dot instead of a block
-        spacing = 4,
+        spacing = 2,
       },
       float = {
         border = "rounded",
