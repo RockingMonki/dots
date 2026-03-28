@@ -1,18 +1,19 @@
 return {
-  'stevearc/conform.nvim',
+  "stevearc/conform.nvim",
   opts = {},
   config = function()
-    require("conform").setup({
+    require("conform").setup {
       formatters_by_ft = {
-	lua = { "stylua" },
-	python = {"isort", "black"},
-      }
-    })
+        lua = { "stylua" },
+        python = { "isort", "black" },
+        go = { "goimports", "gofumpt" },
+      },
+    }
 
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*",
       callback = function(args)
-	require("conform").format({ bufnr = args.buf })
+        require("conform").format { bufnr = args.buf }
       end,
     })
   end,
