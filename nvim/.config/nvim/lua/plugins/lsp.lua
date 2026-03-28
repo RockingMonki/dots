@@ -33,7 +33,11 @@ return {
       capabilities = capabilities,
     })
 
-    vim.lsp.enable { "clangd", "lua_ls" }
+    vim.lsp.config("basedpyright", {
+      capabilities = capabilities,
+    })
+
+    vim.lsp.enable { "clangd", "lua_ls", "basedpyright" }
 
     -- diagnostics
     vim.diagnostic.config {

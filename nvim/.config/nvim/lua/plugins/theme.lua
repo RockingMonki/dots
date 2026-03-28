@@ -12,6 +12,16 @@ return {
         types = "italic", -- Class names and types in italics look classy
         methods = "bold", -- Methods/Functions in bold for better scannability
       },
+      highlights = {
+        -- Keywords (def, class, in, etc.)
+        ["@keyword"] = { bold = true },
+        ["@keyword.function"] = { bold = true },
+        ["@keyword.operator"] = { bold = true },
+
+        -- Variables/Identifiers
+        ["@variable"] = { bold = true },
+        ["@parameter"] = { bold = true },
+      },
     }
     vim.cmd "colorscheme onedark"
   end,
