@@ -1,0 +1,11 @@
+# Minimal Zed shell config
+
+# Essential PATH
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+
+# Basic tools
+alias gs="git status"
+alias v="nvim"
+
+# Optional: load shared env
+[ -f ~/.shell_env ] && source ~/.shell_env
