@@ -127,3 +127,5 @@ eval "$(atuin init zsh)"
 eval "$(starship init zsh)"
 eval "$(zellij setup --generate-auto-start zsh)"
 ###################################################################################################
+
+export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g

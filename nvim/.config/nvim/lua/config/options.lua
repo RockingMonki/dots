@@ -20,3 +20,7 @@ opt.splitbelow = true -- Splits go below
 opt.shiftwidth = 2
 opt.winborder = "rounded"
 opt.termguicolors = true
+opt.shiftwidth = 2
+opt.softtabstop = 2
+opt.expandtab = true 
+opt.tabstop = 2
