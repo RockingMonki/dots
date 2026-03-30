@@ -7,6 +7,9 @@ return {
         lua = { "stylua" },
         python = { "isort", "black" },
         go = { "goimports", "gofumpt" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        svelte = { "prettier" },
       },
     }
 

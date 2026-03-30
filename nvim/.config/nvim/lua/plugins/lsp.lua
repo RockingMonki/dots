@@ -41,7 +41,16 @@ return {
       capabilities = capabilities,
     })
 
-    vim.lsp.enable { "clangd", "lua_ls", "basedpyright", "gopls" }
+    vim.lsp.config("svelte", {
+      cmd = { "svelteserver", "--stdio" },
+      filetypes = { "svelte" },
+      root_markers = { "package.json", ".git", "svele.config.js" },
+      capabilities = capabilities,
+    })
+
+    vim.lsp.config("vtsls", { capabilities = capabilities })
+
+    vim.lsp.enable { "clangd", "lua_ls", "basedpyright", "gopls", "svelte", "vtsls" }
 
     -- diagnostics
     vim.diagnostic.config {
@@ -51,7 +60,7 @@ return {
       },
       float = {
         border = "rounded",
-        source = "always", -- Show the name of the LSP (e.g., "basedpyright")
+        -- source = "always", -- Show the name of the LSP (e.g., "basedpyright")
       },
       signs = true,
       underline = true,
