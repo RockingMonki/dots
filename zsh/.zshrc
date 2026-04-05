@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ################################################################################################
 # RockingMonki aka My config for zsh
 ################################################################################################
@@ -105,6 +112,8 @@ bindkey -v
 zinit ice wait lucid
 zinit light jeffreytse/zsh-vi-mode
 
+zinit light romkatv/powerlevel10k
+
 ##################################################################################################
 # zsh hooks and features setup
 
@@ -124,8 +133,10 @@ bindkey " " magic-space
 #################################################################################################
 # other essential tools 
 eval "$(atuin init zsh)"
-eval "$(starship init zsh)"
 # eval "$(zellij setup --generate-auto-start zsh)"
 ###################################################################################################
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

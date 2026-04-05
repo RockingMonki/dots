@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "disable_ai": true,
   "vim_mode": false,
   "languages": {
     "C": {
@@ -33,7 +34,7 @@
   "which_key": {
     "enabled": true,
   },
-  "icon_theme": "Catppuccin Macchiato",
+  "icon_theme": "Colored Zed Icons Theme Dark",
   "session": {
     "trust_all_worktrees": true,
   },

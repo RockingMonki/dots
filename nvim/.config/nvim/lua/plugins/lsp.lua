@@ -41,16 +41,13 @@ return {
       capabilities = capabilities,
     })
 
-    vim.lsp.config("svelte", {
-      cmd = { "svelteserver", "--stdio" },
-      filetypes = { "svelte" },
-      root_markers = { "package.json", ".git", "svele.config.js" },
+    vim.lsp.config("vtsls", { capabilities = capabilities })
+
+    vim.lsp.config("rust_analyzer", {
       capabilities = capabilities,
     })
 
-    vim.lsp.config("vtsls", { capabilities = capabilities })
-
-    vim.lsp.enable { "clangd", "lua_ls", "basedpyright", "gopls", "svelte", "vtsls" }
+    vim.lsp.enable { "clangd", "lua_ls", "basedpyright", "gopls", "vtsls", "rust_analyzer" }
 
     -- diagnostics
     vim.diagnostic.config {
