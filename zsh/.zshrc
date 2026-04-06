@@ -1,54 +1,103 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 ################################################################################################
 # RockingMonki aka My config for zsh
 ################################################################################################
 
+# Prompt 
+setopt PROMPT_SUBST
+autoload -U colors && colors
+
+################################################################################################
+# Git prompt (FIXED: no recursion, cached)
+
+GIT_PROMPT_INFO=""
+
+update_git_prompt() {
+    git rev-parse --is-inside-work-tree >/dev/null 2>&1 || {
+        GIT_PROMPT_INFO=""
+        return
+    }
+
+    local branch git_state=""
+
+    # Branch (supports detached HEAD)
+    branch=$(git symbolic-ref --short HEAD 2>/dev/null) || \
+    branch=$(git rev-parse --short HEAD 2>/dev/null)
+
+    if [ -n "$branch" ]; then
+        GIT_PROMPT_INFO=" %{$fg[magenta]%}⎇%{$reset_color%} %{$fg[yellow]%}${branch}%{$reset_color%}"
+    fi
+
+    # Fast status checks
+    git diff --quiet 2>/dev/null || git_state+="%{$fg[red]%}!%{$reset_color%}"
+    git diff --cached --quiet 2>/dev/null || git_state+="%{$fg[yellow]%}+%{$reset_color%}"
+
+    if [ -n "$(git ls-files --others --exclude-standard 2>/dev/null)" ]; then
+        git_state+="%{$fg[blue]%}?%{$reset_color%}"
+    fi
+
+    [ -z "$git_state" ] && git_state="%{$fg[green]%}✓%{$reset_color%}"
+
+    GIT_PROMPT_INFO+=" ${git_state}"
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd update_git_prompt
+
+################################################################################################
+# User color
+user_color() {
+    if [ $UID -eq 0 ]; then
+        echo "%{$fg[red]%}"
+    else
+        echo "%{$fg[green]%}"
+    fi
+}
+
+# Exit code arrow
+exit_code() {
+    echo "%(?.%{$fg[green]%}.%{$fg[red]%})➜%{$reset_color%}"
+}
+
+# PROMPT (UNCHANGED LAYOUT)
+PROMPT='%{$fg[cyan]%}%~%{$reset_color%}${GIT_PROMPT_INFO} %(?.%{$fg[green]%}.%{$fg[red]%})➜%{$reset_color%} : '
+################################################################################################
 # Install and setup zinit 
 if [[ ! -f "${HOME}/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
   mkdir -p "${HOME}/.local/share/zinit"
   git clone https://github.com/zdharma-continuum/zinit.git "${HOME}/.local/share/zinit/zinit.git" || true
 fi
-# Source zinit if it exists 
+
 if [[ -f "${HOME}/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
   source "${HOME}/.local/share/zinit/zinit.git/zinit.zsh"
 fi
 
-# Check if mise is installed and activate it
-# Detect mise binary (use PATH if available, otherwise fallback to ~/.local/bin/mise)
+################################################################################################
+# Mise
 if command -v mise >/dev/null 2>&1; then
   MISE_BIN=$(command -v mise)
 else
   MISE_BIN="${HOME}/.local/bin/mise"
 fi
-# Run mise "activate" if the binary exists and is executable (keeps same behavior as before)
+
 if [[ -x "$MISE_BIN" || -f "$MISE_BIN" ]]; then
-  # ignore failures (we don't want shell startup to break)
   eval "$($MISE_BIN activate zsh 2>/dev/null)" 2>/dev/null || true
 fi
 
-###############################################################################################
-# Initialise env and aliases
+################################################################################################
+# Env + aliases
 export EDITOR="nvim"
 
-# zoxide as cd 
 eval "$(zoxide init zsh --cmd cd)"
 alias cat="bat"
 alias cl="clear"
 alias edit="$EDITOR ~/.zshrc"
 alias ser="source ~/.zshrc"
 
-# cd aliases 
 alias ..="cd .."
 alias ....="cd ../.."
 alias ......="cd ../../.."
 
-# Git aliases 
+# Git aliases
 alias gcb="git branch | fzf | cut -c 3- | xargs git checkout"
 alias ga="git add"
 alias gaa="git add --all"
@@ -57,17 +106,16 @@ alias gsb="git status --short --branch"
 alias gp="git push"
 alias gc="git commit"
 
-###################################################################################################
-# History config 
+################################################################################################
+# History
 HISTSIZE=20000
 SAVEHIST=20000
 setopt append_history
 
-###################################################################################################
-# zstyle and fzf & completion
+################################################################################################
+# fzf + completion
 eval "$(fzf --zsh)"
 
-## zstyle
 zstyle ':completion:*:cd:*' fzf-preview 'eza --tree --level=2 --color=always --icons $realpath'
 zstyle ':completion:*' fzf-preview '
   if [ -d $realpath ]; then
@@ -78,28 +126,26 @@ zstyle ':completion:*' fzf-preview '
 '
 zstyle ':completion:*' menu no
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 if [[ -n "$LS_COLORS" ]]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
+
 zstyle ':completion:*' completer _complete _ignored _approximate
 
-# completion
 autoload -Uz compinit
-compinit -d 
+compinit -d
 
-##################################################################################################
-#Plugins and snippets 
+################################################################################################
+# Plugins
+
+# Load autosuggestions LAST to avoid recursion issues
 zinit snippet OMZP::eza
 zinit snippet OMZP::uv
 zinit snippet OMZP::rust
 
-# fzf shell helpers (key-bindings + completion) — keep these as raw snippets
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
-
-# Plugins
-zinit ice wait lucid
-zinit light zsh-users/zsh-autosuggestions
 
 zinit ice wait lucid
 zinit light zdharma-continuum/fast-syntax-highlighting
@@ -107,36 +153,34 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice wait lucid
 zinit light Aloxaf/fzf-tab
 
-# setup vim bindkey
 bindkey -v 
+
 zinit ice wait lucid
 zinit light jeffreytse/zsh-vi-mode
 
-zinit light romkatv/powerlevel10k
+# AUTOSUGGESTIONS LAST (important fix)
+zinit ice wait lucid
+zinit light zsh-users/zsh-autosuggestions
 
-##################################################################################################
-# zsh hooks and features setup
+################################################################################################
+# Hooks
 
-## ls on changing dirs
 chpwd() {
   ls
 }
 
-# edit command widget 
 autoload -Uz edit-command-line 
 zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-# Magic space 
 bindkey " " magic-space
 
-#################################################################################################
-# other essential tools 
+################################################################################################
+# Tools
 eval "$(atuin init zsh)"
-# eval "$(zellij setup --generate-auto-start zsh)"
-###################################################################################################
 
-export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+################################################################################################
+# Go
+export GOPATH="$HOME/go"
+export GOROOT="$HOME/.go"
+export PATH="$GOPATH/bin:$PATH"
