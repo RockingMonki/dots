@@ -2,11 +2,8 @@ return {
   "nvim-tree/nvim-tree.lua",
   version = "*",
   lazy = false,
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
   config = function()
-    require("nvim-tree").setup({
+    require("nvim-tree").setup {
       view = {
         width = 30,
         side = "left",
@@ -17,9 +14,9 @@ return {
       filters = {
         dotfiles = false, -- Set to true if you want to hide hidden files
       },
-    })
+    }
 
     -- Set the keymap to toggle
-    vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { silent = true })
+    vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { silent = true })
   end,
 }

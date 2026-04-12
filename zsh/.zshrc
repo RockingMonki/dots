@@ -90,6 +90,7 @@ export EDITOR="nvim"
 eval "$(zoxide init zsh --cmd cd)"
 alias cat="bat"
 alias cl="clear"
+alias vim="nvim"
 alias edit="$EDITOR ~/.zshrc"
 alias ser="source ~/.zshrc"
 

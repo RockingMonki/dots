@@ -7,8 +7,8 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "helix_mode": true,
   "disable_ai": true,
-  "vim_mode": false,
   "languages": {
     "C": {
       "format_on_save": "on",
@@ -20,8 +20,8 @@
       "username": "root",
       "port": 2222,
       "args": [],
-      "projects": []
-    }
+      "projects": [],
+    },
   ],
   "inlay_hints": {
     "enabled": true,
