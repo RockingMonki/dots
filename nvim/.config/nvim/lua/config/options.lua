@@ -2,7 +2,7 @@ local opt = vim.opt
 
 -- configuring leader and local leader
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+vim.g.maplocalleader = " "
 
 -- options for the editor
 opt.number = true
@@ -22,5 +22,5 @@ opt.winborder = "rounded"
 opt.termguicolors = true
 opt.shiftwidth = 2
 opt.softtabstop = 2
-opt.expandtab = true 
+opt.expandtab = true
 opt.tabstop = 2
