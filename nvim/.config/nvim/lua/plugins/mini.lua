@@ -6,5 +6,6 @@ return {
     require("mini.statusline").setup()
     require("mini.tabline").setup()
     require("mini.pairs").setup()
+    require("mini.icons").setup()
   end,
 }
