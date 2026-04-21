@@ -83,6 +83,7 @@ if [[ -x "$MISE_BIN" || -f "$MISE_BIN" ]]; then
   eval "$($MISE_BIN activate zsh 2>/dev/null)" 2>/dev/null || true
 fi
 
+
 ################################################################################################
 # Env + aliases
 export EDITOR="nvim"
@@ -90,10 +91,11 @@ export EDITOR="nvim"
 eval "$(zoxide init zsh --cmd cd)"
 alias cat="bat"
 alias cl="clear"
-alias vim="nvim"
+alias v="nvim"
 alias edit="$EDITOR ~/.zshrc"
 alias ser="source ~/.zshrc"
 
+alias .="cd ~"
 alias ..="cd .."
 alias ....="cd ../.."
 alias ......="cd ../../.."
@@ -137,6 +139,7 @@ zstyle ':completion:*' completer _complete _ignored _approximate
 autoload -Uz compinit
 compinit -d
 
+eval "$(mise completion zsh)"
 ################################################################################################
 # Plugins
 
@@ -144,6 +147,7 @@ compinit -d
 zinit snippet OMZP::eza
 zinit snippet OMZP::uv
 zinit snippet OMZP::rust
+zinit snippet OMZP::golang
 
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
@@ -185,3 +189,6 @@ eval "$(atuin init zsh)"
 export GOPATH="$HOME/go"
 export GOROOT="$HOME/.go"
 export PATH="$GOPATH/bin:$PATH"
+
+# opencode
+export PATH=/home/monki/.opencode/bin:$PATH
