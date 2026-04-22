@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "diff_view_style": "split",
   "disable_ai": true,
   "languages": {
     "C": {
@@ -35,7 +36,7 @@
   },
   "icon_theme": {
     "mode": "light",
-    "light": "Colored Zed Icons Theme Dark",
+    "light": "Catppuccin Macchiato",
     "dark": "Colored Zed Icons Theme Dark"
   },
   "session": {
@@ -48,6 +49,6 @@
   "theme": {
     "mode": "dark",
     "light": "Gruvbox Light Soft",
-    "dark": "One Dark",
+    "dark": "One Dark Pro",
   },
 }
