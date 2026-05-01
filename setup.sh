@@ -1,7 +1,7 @@
 #/usr/bin/sh
 
 # Install mise and activate it for now
-curl https://mise.run | sh
+curl https://mise.run | sh 
 # Detect mise binary (use PATH if available, otherwise fallback to ~/.local/bin/mise)
 if command -v mise >/dev/null 2>&1; then
   MISE_BIN=$(command -v mise)
@@ -15,6 +15,6 @@ if [[ -x "$MISE_BIN" || -f "$MISE_BIN" ]]; then
 fi
 
 # Install essentials for the config to work 
-mise use -g starship fd ripgrep neovim@nightly zoxide usage atuin eza fzf bat
+mise use -g starship fd ripgrep neovim zoxide usage atuin eza fzf bat glow
 
 echo "Setup complete! GO STOW ZSH now"
