@@ -7,6 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "diff_view_style": "split",
   "disable_ai": true,
   "languages": {
@@ -49,6 +55,6 @@
   "theme": {
     "mode": "dark",
     "light": "Gruvbox Light Soft",
-    "dark": "One Dark Pro",
+    "dark": "One Dark",
   },
 }
